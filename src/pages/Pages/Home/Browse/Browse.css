@@ -1,0 +1,107 @@
+.browse {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+    background-color: black;
+    color: white;
+    gap: 30px;
+}
+
+.browse-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.browse-container {
+    display: flex;
+    flex-direction: row;
+    border-right: 1px solid white;
+    align-items: center;
+    padding-right: 60px;
+    width: 400px;
+    gap: 10px;
+}
+
+.browse-container span {
+    font-size: 18px;
+    color: white;
+}
+
+.browse-container:nth-child(4) {
+    border: none;
+    margin-left: 60px;
+}
+
+.browse-container:nth-child(2) {
+    margin-left: 60px;
+}
+
+.browse-container:nth-child(3) {
+    margin-left: 60px;
+}
+
+/* Add this media query for screens with a maximum width of 767px */
+@media (max-width: 767px) {
+    .browse {
+        flex-direction: column;
+    }
+
+    .browse-container {
+        border-right: none;
+        padding: 1rem 0;
+        width: auto;
+        margin-left: 0;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .browse-container:nth-child(4) {
+        margin-left: 0;
+    }
+
+    .browse-container:nth-child(2),
+    .browse-container:nth-child(3) {
+        margin-left: 0;
+    }
+}
+
+/* Add these styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .browse {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .browse-container {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Original styles below */
+  
+  .browse {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .browse-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .browse-icon {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* ... (rest of your original styles) */
+  

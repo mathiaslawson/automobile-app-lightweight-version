@@ -1,0 +1,14 @@
+Input ::before {
+    background-color: #f9f9f9 !important;
+    outline: none !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+
+
+
+/* Customize the focus outline */
+Input:focus {
+    outline: 5px solid white !important; /* Change the color to your preference */
+    outline-offset: 1px !important; /* Adjust the outline offset if needed */
+}

@@ -1,0 +1,379 @@
+.home {
+    /* display: flex; */
+    background-image: linear-gradient(to left top, #d3fdee, #d4fbed, #d6f9ec, #d7f7eb, #d8f5ea, #d8f5ee, #daf4f2, #dcf3f4, #e2f3f9, #e9f3fc, #f0f3fc, #f6f4fa);
+    /* color: white; */
+    /* padding: 50px 8rem 0 8rem; */
+}
+
+.home-left {
+    flex: 2;
+    padding: 2rem;
+    text-align: left;
+}
+
+.speed,
+.home-title,
+.pilot,
+.card-container {
+    margin: 2rem;
+}
+
+.speed {
+    display: flex;
+    line-height: 0;
+    gap: 10px;
+    align-items: center;
+}
+
+.speed span {
+    font-size: 2rem;
+    color: white;
+}
+
+
+.home-title h1 {
+    font-size: 60px;
+    color: #333;
+}
+
+.home-title p {
+    font-size: larger;
+}
+
+.speed span {
+    gap: 10px;
+}
+
+.pilot {
+    display: flex;
+}
+
+.pilot-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.trustpilot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.trustpilot span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.five-stars {
+    margin-top: 0.5rem;
+}
+
+.first-review {
+    display: flex;
+    gap: 5px;
+}
+
+.t-number {
+    gap: 3px;
+}
+
+.review {
+    border-left: 2px solid black;
+    padding-left: 5px;
+    gap: 3px;
+}
+
+.pilot-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #333;
+    padding-top: 3px;
+    padding-left: 30px;
+}
+
+.google {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.second-review {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.tp-number {
+    gap: 3px;
+}
+
+.next-review {
+    border-left: 2px solid black;
+    padding-left: 5px;
+    gap: 3px;
+}
+
+.card-container {
+    flex: 1;
+    padding: 2rem;
+
+}
+
+.card-car,
+.form {
+    margin-top: 1rem;
+}
+
+/* Add more styles as needed */
+
+.card-container {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.card-container h2 {
+    color: black;
+    display: flex;
+}
+
+.card-car {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.car {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ceacac;
+    padding: 1rem;
+    box-shadow: 5px 5px 5PX #888888;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.first-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.second-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.first-radio label,
+.second-radio label {
+    width: 150px;
+}
+
+.vehicle-budget {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.budget {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.vehicle {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+select {
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    padding: 1rem 1rem;
+}
+
+.budget,
+.vehicle {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button-btn button {
+    background-color: #ec5f5f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.button-btn button:hover {
+    background-color: #2c3e50;
+}
+
+span {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .home {
+        flex-direction: column;
+        padding: 1rem 4rem 1rem 0;
+    }
+
+    .home-left,
+    .card-container {
+        padding: 1rem;
+    }
+
+    .home-left {
+        padding-left: 20px;
+        width: 380px;
+    }
+
+    .home-title h1 {
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        /* Adjust as needed */
+    }
+
+    .pilot,
+    .button {
+        flex-direction: column;
+    }
+
+    .pilot-left,
+    .pilot-right {
+        border: none;
+    }
+
+    .pilot-left {
+        margin-left: 30px;
+    }
+
+    .five-stars,
+    .four-half-stars {
+        margin-top: 0.5rem;
+    }
+
+    .card-container {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-car {
+        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Adjust as needed */
+    }
+
+    .car {
+        border-radius: 50%;
+        border-bottom: 1px solid #333;
+        width: fit-content;
+        display: flex;
+    }
+
+    .radio {
+        flex-direction: row;
+        margin-bottom: 10px;
+        /* Adjust as needed */
+    }
+
+    .radio label {
+        display: flex;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .first-radio label,
+    .second-radio label {
+        margin-bottom: 8px;
+        /* width: 150px; */
+        margin-top: 10px;
+    }
+
+    .vehicle-budget {
+        padding: 1rem;
+    }
+
+    .budget,
+    .vehicle {
+        width: 100%;
+        margin-bottom: 10px;
+        /* Adjust as needed */
+    }
+
+    .button-btn button {
+        width: 100%;
+    }
+
+    span {
+        margin-top: 0;
+    }
+}
+
+
+
+
+/* Override default focus outline for Reactstrap components */
+.btn:focus,
+.nav-link:focus,
+.form-control:focus,
+Input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Optionally, you can add additional styles to indicate focus */
+.btn:focus,
+.nav-link:focus,
+.form-control:focus,
+Input:focus {
+    border-color: #ced4da; /* Add a border color for focus */
+}

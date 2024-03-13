@@ -1,0 +1,227 @@
+.fade-slide-in-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.fade-slide-in-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.brands {
+    display: flex;
+    padding: 4rem 4rem;
+    flex-direction: column;
+    margin: 4rem 0;
+}
+
+.brand-board {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.brand-card {
+    position: relative;
+    background: #fcf9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transition: background 0.3s;
+    margin-bottom: 40px;
+}
+
+.brand-card:hover {
+    background-image: linear-gradient(to left top, #d6f6f3, #ddf6fa, #e6f7fe, #eff7ff, #f6f8fd, #f2f4fc, #eef1fb, #ebedfa, #dbe4fa, #c7dcfa, #afd5f9, #92cff6);
+    cursor: pointer;
+    transition: background-image 0.3s;
+}
+
+.brand-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+}
+
+.brand-container img {
+    width: 80px;
+    height: 80px;
+    margin-top: 2rem;
+    padding-bottom: 20px;
+}
+
+.brand-cat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.brand-cat button {
+    position: relative;
+    color: black;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border 0.3s, transform 0.3s;
+    overflow: hidden;
+}
+
+.brand-cat button::before,
+.brand-cat button::after {
+    content: "";
+    box-sizing: border-box;
+    border: 1px solid green;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(-5deg);
+    transition: 0.5s;
+}
+
+
+.brand-cat button:hover::before,
+.brand-cat button:hover::after {
+    transform: rotate(0deg);
+}
+
+.horizontal-grid {
+  display: flex;
+  
+  flex-wrap: wrap;
+ 
+  justify-content: center;
+}
+
+.brand-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.brand-item:hover {
+opacity: 0.8;
+filter: brightness(80%);
+  cursor: pointer;
+}
+
+.brand-item:last-child {
+  margin-right: 0;
+}
+
+
+
+@media (max-width: 767px) {
+    .brands {
+        display: flex;
+        padding: 4rem 4rem;
+        flex-direction: column;
+        margin: 4rem 0;
+    }
+
+    .brand-board {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 40px;
+    }
+
+    .brand-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .brand-container img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Add these styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .brands {
+      flex-direction: column;
+    }
+  
+    .brand-board {
+      margin-top: 20px;
+    }
+  
+    .brand-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .brand-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .brand-container img {
+      width: 80%; /* Adjust the width as needed */
+    }
+  
+    .brand-cat {
+      text-align: center;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Original styles below */
+  
+  .brands {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .brand-board {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .brand-card {
+    width: 500px;
+    margin-right: 20px;
+    padding: 2rem;
+    background-color: #faf8fb;
+    box-shadow: none;
+  }
+  
+  .brand-container {
+    position: relative;
+  }
+  
+  .brand-container img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .brand-cat {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* ... (rest of your original styles) */
+  

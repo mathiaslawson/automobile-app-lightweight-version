@@ -1,0 +1,554 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    background-color: #fff;
+    color: black;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #e5e2e2;
+}
+
+.navbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.navbar-desc {
+    font-style: italic;
+    margin: 0;
+    /* Reset default margin for cleaner layout */
+}
+
+.search {
+    display: flex;
+    width: 600px;
+    height: 55px;
+
+}
+
+input {
+    width: 80%;
+    padding: 1rem;
+    border: 1px solid #cfcccc;
+    background-color: #f5f5f5;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #eb3232;
+    outline: none;
+}
+
+.btn {
+    /* color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    width: 60px;
+    background-color: black;
+    border-radius: 0 4px 4px 0; */
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.sell-save {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.tag-sell,
+.tag-save {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+}
+
+.tag-sell span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #eb3232;
+}
+
+.tag-save span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #eb3232;
+}
+
+.signup {
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #eb3232;
+    font-size: large;
+}
+
+.signup span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.signup a {
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.new-cart {
+    display: none;
+}
+
+.bars {
+    display: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-title {
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+
+    .navbar-desc {
+        font-size: x-small;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .tags {
+        display: none;
+    }
+
+    .new-cart {
+        display: flex;
+    }
+
+    .cart-top {
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+    }
+
+    .bars {
+        display: flex;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+
+}
+
+/* second navbar */
+
+.bottom-nav {
+    /* Change to your desired background color */
+    color: black;
+    padding: 0 2rem;
+
+}
+
+.bottom-nav-next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-list {
+    flex: 1;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-item li {
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+}
+
+.menu-item span {
+    display: flex;
+    align-items: center;
+}
+
+.right-side {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.cart-numb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+/* Style the cart and contact icons as needed */
+.cart {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.hand-bag {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.inquiry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-left: 1px solid #858383;
+    padding-left: 15px;
+}
+
+.inquiry .more {
+    margin-right: 20px;
+}
+
+.inquiry .number {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* sidebar humburger display */
+/* Add this CSS for the hamburger menu */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    overflow-x: hidden;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    border-right: 2px solid #858383;
+}
+
+.fatimes {
+    z-index: 999;
+}
+
+.fabars {
+    z-index: 999;
+}
+
+.design-bars {
+    cursor: pointer;
+    transition: transform 5s ease-in-out;
+}
+
+.design-bars.open {
+    transform: translateX(60%);
+}
+
+.side-nav-open {
+    width: 60%;
+    transition: width 0.5s ease-in-out;
+    overflow-x: hidden;
+    /* Add this line to prevent horizontal scroll */
+    z-index: 1;
+    /* Add this line to ensure the sidebar is on top of other content */
+}
+
+.side-nav-next {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-menu {
+    list-style-type: none;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Change to column to display items vertically */
+}
+
+.side-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.side-menu-item li {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.side-menu-item span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Align arrow vertically */
+}
+
+.side-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.side-sell-save {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.side-tag-sell,
+.side-tag-save {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+}
+
+.side-tag-sell span,
+.side-tag-save span {
+    display: flex;
+    align-items: center;
+    color: #eb3232;
+}
+
+.side {
+    border-bottom: 2px solid #cfcccc;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.side-signup {
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #eb3232;
+    font-size: large;
+    margin-bottom: 40px;
+}
+
+.side-signup span {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.side-signup a {
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+/* Rest of your styles */
+
+.side-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.side-sell-save {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.side-tag-sell,
+.side-tag-save {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+}
+
+.side-tag-sell span,
+.side-tag-save span {
+    display: flex;
+    align-items: center;
+    color: #eb3232;
+}
+
+.side-signup {
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #eb3232;
+    font-size: large;
+}
+
+.side-signup span {
+    display: flex;
+    align-items: center;
+}
+
+.side-signup a {
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.design-bars {
+    cursor: pointer;
+}
+
+.side-contact {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.side-inquiry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 2px solid #cfcccc;
+    padding-left: 15px;
+    margin: 20px;
+}
+
+.side-number {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Add these styles for responsive design */
+
+@media only screen and (max-width: 768px) {
+    .navbar-row {
+      flex-direction: column;
+    }
+  
+    .search {
+      margin-top: 20px;
+    }
+  
+    .new-cart {
+      margin-top: 20px;
+    }
+  
+    .bars {
+      margin-top: 20px;
+    }
+  
+    .side-nav {
+      width: 100%;
+    }
+  
+    .side-menu {
+      flex-direction: column;
+    }
+  
+    .tags {
+      flex-direction: column;
+    }
+  
+    .bottom-nav-next {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Add more responsive styles as needed */
+  }
+  
+  /* Original styles below */
+  
+  /* ... (rest of your original styles) */
+  

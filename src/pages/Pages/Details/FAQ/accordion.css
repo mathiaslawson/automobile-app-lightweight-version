@@ -1,0 +1,115 @@
+.accordion-button  {
+    color: #26303d !important; 
+    outline: none !important;
+    border: 1px solid #eaeaea !important;
+    background-color: transparent !important;
+    margin-top: 2rem;
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+    font-weight: light ;
+    padding: 20px;
+    background-color: #faf8fb !important;
+    border-radius: 18px !important;
+  }
+  
+  
+  .accordion-button:not(.collapsed){
+    box-shadow: none !important;
+  }
+  
+  .accordion-button:is(.collapsed){
+    box-shadow: none !important;
+  }
+  
+  .accordion-body{
+    font-size: 20px;
+    color: gray;
+    font-weight: lighter;
+     font-size: 1rem;
+  }
+  
+  /* LatestNews.css */
+  
+  .slider-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  .slider-item {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Adjust margin as needed */
+    width: 300px; /* Adjust width as needed */
+    text-align: center;
+  }
+  
+  .slider-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Add border-radius for rounded corners */
+  }
+  
+  .read-more {
+    display: block;
+    margin-top: 10px; /* Adjust margin as needed */
+    text-decoration: none;
+    color: #007BFF; /* Set your preferred color */
+  }
+  
+  .read-more span {
+    margin-left: 5px;
+  }
+  
+  Input{
+    padding: 20px !important;
+    background-color: white !important;
+    border-radius: 10px !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+  
+  .texta{
+    padding: 20px !important;
+    background-color: white !important;
+    border-radius: 10px !important;
+    border: none !important;
+    height: 200px !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+  
+  Input:focus {
+    border-color: #00d084  !important;
+  }
+  
+
+  .comment-title{
+display: none  !important;
+  }
+  
+
+  .userImg{
+    display: none  !important;
+  }
+
+  .userIcon{
+    display: none !important;
+  }
+
+  .form{
+    background-color: transparent !important;
+  }
+
+
+  .postComment{
+    margin: 1rem !important;
+    border: 1px solid #00d084 !important;
+  }
+
+  .postBtn{
+    background-color: #00d084 !important;
+    border: none !important;
+    padding: 1rem !important;
+  }
+
+  .hr-style{
+    border: 1px solid white !important;
+  }

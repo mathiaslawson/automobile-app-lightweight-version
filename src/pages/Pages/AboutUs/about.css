@@ -1,0 +1,23 @@
+
+
+  .container-head {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50rem;
+    padding-right: 50rem;
+  
+  }
+  
+  @media (max-width: 767px) {
+    .container2 {
+      display: flex;
+      flex-direction: column;
+     
+    }
+  
+    .card {
+      padding: 0;
+    }
+  }
+  
+  

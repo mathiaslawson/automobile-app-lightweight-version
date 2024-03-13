@@ -1,0 +1,17 @@
+.image-transition-enter {
+    opacity: 0;
+  }
+  
+  .image-transition-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+  
+  .image-transition-exit {
+    opacity: 1;
+  }
+  
+  .image-transition-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }

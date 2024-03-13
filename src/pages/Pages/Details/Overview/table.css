@@ -1,0 +1,30 @@
+/* YourComponent.css */
+
+.table-container {
+    display: flex;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%; /* Adjust as needed */
+    margin-right: 20px; /* Adjust as needed */
+  }
+  
+  th, td {
+    border-bottom: 1px solid #f3f6f9;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+  
+
+  .left{
+    font-weight: lighter;
+  }
+
+  .details-card:hover{
+    border: 1px solid #00d084 !important;
+  }

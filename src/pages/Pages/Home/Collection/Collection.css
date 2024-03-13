@@ -1,0 +1,410 @@
+.main-collections {
+    display: flex;
+    background-color: #fcf9f9;
+}
+
+.collections {
+    padding: 2rem 4rem;
+    margin: 2rem 2rem;
+    width: 100%;
+}
+
+.collections h3 {
+    color: black;
+    font-size: 1.5em;
+    padding-left: 4rem;
+}
+
+.header-collections {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    /* Adjust padding as needed */
+}
+
+.header-collections h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.links a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+}
+
+/* Add the following CSS to make the links go to the end of the div */
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link-container {
+    border-bottom: solid 1px grey;
+    padding-bottom: 10px;
+}
+
+.links a:nth-child(1) {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.main-cards {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.car-card {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.card-slider {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    width: 350px;
+}
+
+.card-arrows {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* Adjust as needed */
+}
+
+.card-left-arrow,
+.card-right-arrow {
+    cursor: pointer;
+    color: black;
+}
+
+.card-left-arrow {
+    left: 0;
+    font-size: 40px;
+}
+
+.card-right-arrow {
+    right: 0;
+    font-size: 40px;
+}
+
+.img-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 1rem;
+}
+
+
+.img-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.ten-collections,
+.heart,
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    color: black;
+    /* Set the color as needed */
+}
+
+.ten-collections,
+.heart,
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    color: black;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.img-card:hover .ten-collections,
+.img-card:hover .heart,
+.img-card:hover .left-arrow,
+.img-card:hover .right-arrow {
+    opacity: 1;
+}
+
+.ten-collections {
+    top: 10px;
+    left: 14px;
+}
+
+.heart {
+    top: 10px;
+    right: 14px;
+}
+
+.heart:hover {
+    color: orange;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    right: 10px;
+    color: #fff;
+}
+
+.right-arrow:hover {
+    color: orange;
+}
+
+.slide {
+    position: absolute;
+    top: 50%;
+}
+
+.left-arrow,
+.right-arrow {
+    display: flex;
+    cursor: pointer;
+    /* Set the color as needed */
+}
+
+.left-arrow {
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+}
+
+.left-arrow:hover {
+    color: orange;
+}
+
+
+.main-details {
+    padding: 10px;
+}
+
+.details h4 {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+
+.price-location {
+    display: flex;
+    margin-bottom: 5px;
+    flex-direction: row;
+    padding-left: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.location {
+    border-left: 1px solid #e1dede;
+    padding-left: 20px;
+    gap: 5px;
+    align-items: center;
+}
+
+.tank {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.border {
+    background-color: rgb(233, 231, 231);
+    width: 230px;
+    height: 1px;
+    margin-left: 40px;
+}
+
+.tank span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.views {
+    margin-top: 10px;
+}
+
+.view-more {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 20px;
+    gap: 10px;
+}
+
+.views:hover {
+    color: orange;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.view-more span {
+    margin-bottom: 3px;
+}
+
+.view-more span:hover {
+    color: orange;
+}
+
+.category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.category button {
+    position: relative;
+    color: black;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border 0.3s, transform 0.3s;
+    overflow: hidden;
+}
+
+.category button::before,
+.category button::after {
+    content: "";
+    box-sizing: border-box;
+    border: 1px solid green;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(-5deg);
+    transition: 0.5s;
+}
+
+
+.category button:hover::before,
+.category button:hover::after {
+    transform: rotate(0deg);
+}
+
+/* ... existing CSS ... */
+
+@media (max-width: 767px) {
+    .main-collections {
+        flex-direction: column;
+        display: flex;
+        margin: 0;
+    }
+
+    .header-collections {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .header-collections h1 {
+        padding-left: 0;
+        width: 300px;
+    }
+
+    .collections {
+        width: 100%;
+        margin: 2rem 0;
+        padding: 2rem 4rem;
+    }
+
+    .collections h3 {
+        padding-left: 0;
+    }
+
+    .links {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 10px;
+    }
+
+    .links a {
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .main-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .img-card {
+        padding: 1rem;
+    }
+
+    .right-arrow {
+        top: 40%;
+        right: 10px;
+    }
+
+    .left-arrow {
+        bottom: -40px;
+        left: 10px;
+    }
+
+    .heart {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 16px;
+    }
+
+    .ten-collections {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        font-size: 16px;
+    }
+
+    .price-location,
+    .tank,
+    .view-more {
+        padding-left: 1rem;
+    }
+
+    .border {
+        margin-left: 1rem;
+    }
+
+    .category {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}

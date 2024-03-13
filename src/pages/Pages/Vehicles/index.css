@@ -1,0 +1,40 @@
+.nav-tabs .nav-item .nav-link {
+    /* Add a black border to all tabs */
+    border-radius: 0; /* Make the borders square */
+    /* Add other styles as needed */
+   width: max-content;
+    text-align: center;
+    color: gray;
+    padding: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: black; 
+    border-radius: 50px;
+    margin-left: auto;
+  }
+  
+  .nav-tabs .nav-item .nav-link:hover {
+   
+ 
+    background-color: #8b3af8;
+   color: white;
+   
+  border-radius: 50px;
+  }
+
+  .nav-tabs .nav-item .nav-link.active {
+    background-color: #6990ff; /* Change to your desired background color for the active tab */
+  border: none;
+  /* border-bottom: 4px solid black; */
+  background-color:#8b3af8 ;
+  color: white;
+  border-radius: 50px;
+  /* margin: 0px 10px 0px 10px;   */
+    /* Change to your desired text color for the active tab */
+    /* Add other styles as needed for the active tab */
+  
+  }
+  
+  /* Style for the active tab's link */
+ 
