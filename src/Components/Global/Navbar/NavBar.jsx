@@ -572,7 +572,7 @@ const NavBar = () => {
             <ul className="menu p-4 d-flex flex-wrap">
               <li className="mt-2">
                 <Link
-                  to={"/"}
+                  to={"/home"}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Home

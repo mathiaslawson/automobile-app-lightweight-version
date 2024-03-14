@@ -75,7 +75,7 @@ const Sidebar = ({ layoutType }) => {
     <React.Fragment>
       <StyledContainer  className="app-menu navbar-menu text-light m-3 mx-3" style={{backgroundColor: 'white', border: '1px solid #e0e0e0', color: 'white', boxShadow: 'none', borderRadius: "30px", overflow: 'scroll'}}>
         <div className="navbar-brand-box p-2" style={{backgroundColor: "transparent"}}>
-          <Link to="/" className="logo logo-dark">
+          <Link to="/home" className="logo logo-dark">
             <span className="logo-sm">
               <img src={img} alt="" height="52" />
               {/* <h4 className="p-3">Automarket</h4> */}
@@ -86,7 +86,7 @@ const Sidebar = ({ layoutType }) => {
             </span>
           </Link>
 
-          <Link to="/" className="logo logo-light">
+          <Link to="/home" className="logo logo-light">
             <span className="logo-sm">
               <img src={img} alt="" height="52" />
               {/* <h4 className="p-3">Automarket</h4> */}

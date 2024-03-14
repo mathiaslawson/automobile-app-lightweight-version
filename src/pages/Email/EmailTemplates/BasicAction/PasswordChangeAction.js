@@ -82,7 +82,7 @@ const PasswordChangeAction = () => {
                                         </table>
                                         <div style={{textAlign: "center", margin: "28px auto 0px auto"}}>
                                             <h4>Need Help ?</h4>
-                                            <p style={{color: "#878a99"}}>Please send and feedback or bug info to <Link to="/" style={{fontWeight: "500px"}}>info@velzon.com</Link></p>
+                                            <p style={{color: "#878a99"}}>Please send and feedback or bug info to <Link to="/home" style={{fontWeight: "500px"}}>info@velzon.com</Link></p>
                                             <p style={{fontFamily: "Roboto, sans-serif", fontSize: "14px", color: "#98a6ad", margin: "0px"}}>2022 Velzon. Design & Develop by Themesbrand</p>
                                         </div>
                                     </div>

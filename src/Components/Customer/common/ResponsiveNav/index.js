@@ -17,7 +17,7 @@ const DoubleNavbar = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Brand</NavbarBrand>
+        <NavbarBrand href="/home">Brand</NavbarBrand>
         a
         <NavbarToggler onClick={toggle} />s
         <Collapse isOpen={isOpen}>
@@ -31,7 +31,7 @@ const DoubleNavbar = () => {
       </Navbar>
 
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Brand</NavbarBrand>
+        <NavbarBrand href="/home">Brand</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

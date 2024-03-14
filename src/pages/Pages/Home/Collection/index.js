@@ -62,11 +62,11 @@ const Collection = () => {
 
           <div className="links text-end text-sm-start">
             <div className="link-container">
-              <a href="/">Sedan</a>
-              <a href="/">SUV</a>
-              <a href="/">Toyota</a>
-              <a href="/">Hatch</a>
-              <a href="/">BMW</a>
+              <a href="/home">Sedan</a>
+              <a href="/home">SUV</a>
+              <a href="/home">Toyota</a>
+              <a href="/home">Hatch</a>
+              <a href="/home">BMW</a>
             </div>
           </div>
         </div>

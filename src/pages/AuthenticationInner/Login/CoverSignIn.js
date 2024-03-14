@@ -26,7 +26,7 @@ document.title="Cover SignIn | Velzon - React Admin & Dashboard Template";
                                                 </div>
 
                                                 <div className="mt-4">
-                                                    <form action="/">
+                                                    <form action="/home">
 
                                                         <div className="mb-3">
                                                             <Label htmlFor="username" className="form-label">Username</Label>

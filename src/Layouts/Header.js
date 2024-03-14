@@ -77,7 +77,7 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
                         <div className="d-flex">
 
                             <div className="navbar-brand-box horizontal-logo">
-                                <Link to="/" className="logo logo-dark">
+                                <Link to="/home" className="logo logo-dark">
                                     <span className="logo-sm">
                                        <Logo />
                                     </span>
@@ -86,7 +86,7 @@ const Header = ({ onChangeLayoutMode, layoutModeType, headerClass }) => {
                                     </span>
                                 </Link>
 
-                                <Link to="/" className="logo logo-light">
+                                <Link to="/home" className="logo logo-light">
                                     <span className="logo-sm">
                                        <Logo />
                                     </span>
