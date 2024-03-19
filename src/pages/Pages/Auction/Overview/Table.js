@@ -34,11 +34,6 @@ const Table = () => {
             <td>Color’s</td>
             <td className="left">sky blue</td>
           </tr>
-        </tbody>
-      </table>
-
-      <table className="table">
-        <tbody>
           <tr>
             <td>Repaire</td>
             <td className="left">no</td>
@@ -70,6 +65,40 @@ const Table = () => {
           </tr>
         </tbody>
       </table>
+
+      {/* <table className="table">
+        <tbody>
+          <tr>
+            <td>Repaire</td>
+            <td className="left">no</td>
+          </tr>
+          <tr>
+            <td>Steering</td>
+            <td className="left">right</td>
+          </tr>
+          <tr>
+            <td>Steating Catacity</td>
+            <td className="left">08</td>
+          </tr>
+          <tr>
+            <td>Fuel Type</td>
+            <td className="left">petrol+gas</td>
+          </tr>
+          <tr>
+            <td>No. of Cylinder</td>
+            <td className="left">03</td>
+          </tr>
+        
+          <tr>
+            <td>Transmission</td>
+            <td className="left">Manual</td>
+          </tr>
+          <tr>
+            <td>Wheel’s</td>
+            <td className="left">04</td>
+          </tr>
+        </tbody>
+      </table> */}
     </div>
   );
 };

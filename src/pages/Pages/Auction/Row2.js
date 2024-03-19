@@ -17,7 +17,7 @@ const Row2 = () => {
   return (
     <div className="container mt-5">
       <div className="">
-        <Nav tabs style={{ position: "sticky" }}>
+        {/* <Nav tabs style={{ position: "sticky" }}>
           <NavItem>
             <NavLink onClick={() => scrollToSection("section1")}>
               Car Image
@@ -56,17 +56,17 @@ const Row2 = () => {
               Question & Answer
             </NavLink>
           </NavItem>
-        </Nav>
+        </Nav> */}
 
-        <div id="section1" className="section" style={{ height: "auto" }}>
+        <div id="" className="" style={{ height: "auto" }}>
           <CarImage />
         </div>
 
-        <div id="section2" className="section" style={{ height: "auto" }}>
+        <div id="" className="" style={{ height: "auto" }}>
           <Overview />
         </div>
 
-        <div id="section3" className="section" style={{ height: "auto" }}>
+        <div id="" className="" style={{ height: "auto" }}>
           <FAQ />
         </div>
       </div>
