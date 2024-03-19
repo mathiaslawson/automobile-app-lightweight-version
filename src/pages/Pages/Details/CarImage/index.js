@@ -48,7 +48,7 @@ function Index() {
     setTimeout(() => {
       setLoading(false);
       toast.success("Message sent successfully");
-      setFormData({})
+      setFormData({});
     }, 3000);
   };
 
@@ -299,6 +299,26 @@ function Index() {
               style={{ border: "1px dashed #e0e0e0", borderRadius: "10px" }}
             >
               {" "}
+              <div className="text-center mt-2 mb-2">
+                {/* img */}
+                <img
+                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBtYW58ZW58MHx8MHx8fDA%3D"
+                  alt="profile"
+                  style={{
+                    borderRadius: "50%",
+                    width: "200px",
+                    height: "200px",
+                    objectFit: "cover",
+                  }}
+                ></img>
+              </div>
+              <div className="text-center">
+                <h4>Local Office in Ghana</h4>
+                <h6 className="text-muted">AutoMobile Gh</h6>
+                <p className="fw-bolder">Daniel James</p>
+                <p><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f1ec-1f1ed.svg" alt="flag" style={{width: '30px', height:'30px'}}></img></p>
+                <p className="text-muted">English</p>
+              </div>
               <Button
                 className="btn btn-dark text-dark w-100 p-3 fw-bolder"
                 style={{ backgroundColor: "#00d084", border: "none" }}

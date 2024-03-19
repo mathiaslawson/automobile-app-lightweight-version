@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Row, Col, Card, Button } from "reactstrap";
 import Divider from "../../../Components/Common/Divider";
+import {Link} from 'react-router-dom'
 
 function Row2() {
+
+
+  useEffect(()=>{
+    //  window.scrollTo(window.innerWidth, window.innerHeight)
+    window.scroll(0, 120)
+  }, [])
+
+
+
   return (
     <>
       <div className="container mb-3">
@@ -51,7 +61,9 @@ function Row2() {
             </p>
 
             <div className="text-center">
-              <Button
+             <Link to='/single-brand'>
+             <Link to='/single-brand'>
+             <Button
                 style={{
                   width: "max-content",
                   backgroundColor: "#00d084",
@@ -60,7 +72,7 @@ function Row2() {
                 }}
               >
                 View All Cars
-              </Button>
+              </Button></Link></Link>
             </div>
           </Col>
           <Col
@@ -215,7 +227,8 @@ function Row2() {
             </p>
 
             <div className="text-center">
-              <Button
+              <Link to='/single-brand'>
+             <Button
                 style={{
                   width: "max-content",
                   backgroundColor: "#00d084",
@@ -224,7 +237,7 @@ function Row2() {
                 }}
               >
                 View All Cars
-              </Button>
+              </Button></Link>
             </div>
           </Col>
           <Col
@@ -379,7 +392,8 @@ function Row2() {
             </p>
 
             <div className="text-center">
-              <Button
+              <Link to='/single-brand'>
+             <Button
                 style={{
                   width: "max-content",
                   backgroundColor: "#00d084",
@@ -388,7 +402,7 @@ function Row2() {
                 }}
               >
                 View All Cars
-              </Button>
+              </Button></Link>
             </div>
           </Col>
           <Col

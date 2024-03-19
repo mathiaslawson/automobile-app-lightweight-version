@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 //import Scss
 import './assets/scss/themes.scss';
@@ -29,7 +29,18 @@ fakeBackend();
 // init firebase backend
 // initFirebaseBackend(firebaseConfig);
 
+
+
+
 function App() {
+
+
+  useEffect(()=>{
+    //  window.scrollTo(window.innerWidth, window.innerHeight)
+    window.scroll(0, 120)
+  }, [])
+
+
   return (
     <React.Fragment>
       <Route />

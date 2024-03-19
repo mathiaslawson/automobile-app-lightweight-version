@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Card, CardBody, Col, Row, Button, Container } from "reactstrap";
 import { SlSpeedometer } from "react-icons/sl";
 import { BsFilterLeft } from "react-icons/bs";
@@ -7,6 +7,14 @@ import { IoStar, IoStarHalf } from "react-icons/io5";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 
 function Row1() {
+
+
+  
+  useEffect(()=>{
+    //  window.scrollTo(window.innerWidth, window.innerHeight)
+    window.scroll(0, 120)
+  }, [])
+
   return (
     <>
       <div className="home">

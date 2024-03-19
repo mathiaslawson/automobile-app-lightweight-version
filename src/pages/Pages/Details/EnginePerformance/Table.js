@@ -21,9 +21,26 @@ const Table = () => {
             <td>Engine Config</td>
             <td className="left">In-line</td>
           </tr>
+
+          <tr>
+            <td>Valve Gear</td>
+            <td className="left">DOHC with VVT</td>
+          </tr>
+          <tr>
+            <td>Fuel Injection</td>
+            <td className="left">Direct Injection</td>
+          </tr>
+          <tr>
+            <td>Power</td>
+            <td className="left">140 kw 7000 rpm</td>
+          </tr>
+          <tr>
+            <td>Engine Location</td>
+            <td className="left">front</td>
+          </tr>
         </tbody>
       </table>
-
+      {/* 
       <table className="table">
         <tbody>
           <tr>
@@ -43,7 +60,7 @@ const Table = () => {
             <td className="left">front</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };

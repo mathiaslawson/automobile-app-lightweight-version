@@ -28,6 +28,7 @@ import {
   TwitterShareButton,
   RedditShareButton,
 } from "react-share";
+import AddtoCart from "../../../../Components/Hooks/AddToCart";
 
 const ProductDescription = () => {
   const [quantity, setQuantity] = useState(1);
@@ -44,7 +45,7 @@ const ProductDescription = () => {
   };
 
   const handleAddToCart = () => {
-    toast.success("Item added to cart!");
+    AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: quantity})
   };
 
   const toggleLike = () => {

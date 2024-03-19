@@ -16,6 +16,7 @@ import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import "./style.css";
 import RatingList from "./RatingComponent";
+import AddtoCart from "../../../Components/Hooks/AddToCart";
 
 const Row2 = () => {
   const products = data();
@@ -274,11 +275,7 @@ const Row2 = () => {
               <Col xl={8} className="d-flex" style={{ flexWrap: "wrap" }}>
                 <Row>
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                      className="card-border"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -345,6 +342,7 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
                             }}
                           >
                             Add to Cart
@@ -352,29 +350,23 @@ const Row2 = () => {
                         </div>
 
                         <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
                           <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
-
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -410,13 +402,13 @@ const Row2 = () => {
                             >
                               <CiHeart
                                 style={{ color: "black" }}
-                                className="fs-5"
+                                className="fs-5 heart-part"
                               />
                             </div>
                           </div>
                           <img
                             src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-07.png"
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
                             }
                             alt="suv"
                             className=""
@@ -441,6 +433,7 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
                             }}
                           >
                             Add to Cart
@@ -448,28 +441,23 @@ const Row2 = () => {
                         </div>
 
                         <div className="mt-5">
-                          <h4 className=" fs-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
+                          <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -505,13 +493,13 @@ const Row2 = () => {
                             >
                               <CiHeart
                                 style={{ color: "black" }}
-                                className="fs-5"
+                                className="fs-5 heart-part"
                               />
                             </div>
                           </div>
                           <img
                             src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-05.png"
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
                             }
                             alt="suv"
                             className=""
@@ -536,6 +524,7 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
                             }}
                           >
                             Add to Cart
@@ -543,30 +532,27 @@ const Row2 = () => {
                         </div>
 
                         <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
                           <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
+
+          
                 </Row>
                 <Row>
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -602,13 +588,13 @@ const Row2 = () => {
                             >
                               <CiHeart
                                 style={{ color: "black" }}
-                                className="fs-5"
+                                className="fs-5 heart-part"
                               />
                             </div>
                           </div>
                           <img
                             src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-02.png"
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
                             }
                             alt="suv"
                             className=""
@@ -633,35 +619,31 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: ' Tech master New Brand Carbon ceramic brakes.', qty: 1})
                             }}
-                          >
+                          >s
                             Add to Cart
                           </Button>
                         </div>
 
                         <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
                           <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -697,13 +679,13 @@ const Row2 = () => {
                             >
                               <CiHeart
                                 style={{ color: "black" }}
-                                className="fs-5"
+                                className="fs-5 heart-part"
                               />
                             </div>
                           </div>
                           <img
                             src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-03.png"
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
                             }
                             alt="suv"
                             className=""
@@ -728,6 +710,7 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
                             }}
                           >
                             Add to Cart
@@ -735,125 +718,118 @@ const Row2 = () => {
                         </div>
 
                         <div className="mt-5">
-                          <h4 className=" fs-5">
-                            Tech master New Brand Carbon ceramic brakes.
-                          </h4>
-                          <div className="fw-lighter">GHC 214.00</div>
-                        </div>
-
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
-                      </div>
-                    </Link>
-                  </div>
-                  <div className="col">
-                    <Link
+                        <Link
                       style={{ textDecoration: "none", color: "black" }}
                       to="/shop-details"
+                      className="card-border"
                     >
-                      <div
-                        className="p-2 card-border"
-                        style={{
-                          boxShadow: "none",
-                          border: "1px solid #eaeaea",
-                          borderRadius: "10px",
-                        }}
-                      >
-                        <div className="">
-                          <div
-                            style={{ position: "relative" }}
-                            className="d-flex justify-content-between mb-3"
-                          >
-                            <div
-                              style={{
-                                backgroundColor: "red",
-                                borderRadius: "4px",
-                              }}
-                              className="p-1 text-light fw-bolder px-3"
-                            >
-                              -10%
-                            </div>
-                            <div
-                              style={{
-                                backgroundColor: "white",
-                                borderRadius: "50%",
-                                cursor: "pointer",
-                              }}
-                              className="p-1 text-light fw-bolder "
-                              onClick={() => {
-                                toast.success("Part Added to Wishlist");
-                              }}
-                            >
-                              <CiHeart
-                                style={{ color: "black" }}
-                                className="fs-5"
-                              />
-                            </div>
-                          </div>
-                          <img
-                            src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-08.png"
-                            }
-                            alt="suv"
-                            className=""
-                            style={{
-                              borderRadius: "6px",
-                              maxWidth: "100%",
-                            }}
-                          />
-                        </div>
-
-                        <div className="text-center mt-4">
-                          <Button
-                            style={{
-                              backgroundColor: "#00d084",
-                              border: "none",
-                              width: "max-content",
-                            }}
-                            className="w-50 p-2 text-dark fw-bolder"
-                            onClick={() => {
-                              setLoading(true);
-                              setTimeout(() => {
-                                setLoading(false);
-                                toast.success("Part Added to Cart");
-                              }, 3000);
-                            }}
-                          >
-                            Add to Cart
-                          </Button>
-                        </div>
-
-                        <div className="mt-5">
                           <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
+                  <div className="col">
+                   
+                      <div
+                        className="p-2 card-border"
+                        style={{
+                          boxShadow: "none",
+                          border: "1px solid #eaeaea",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <div className="">
+                          <div
+                            style={{ position: "relative" }}
+                            className="d-flex justify-content-between mb-3"
+                          >
+                            <div
+                              style={{
+                                backgroundColor: "red",
+                                borderRadius: "4px",
+                              }}
+                              className="p-1 text-light fw-bolder px-3"
+                            >
+                              -10%
+                            </div>
+                            <div
+                              style={{
+                                backgroundColor: "white",
+                                borderRadius: "50%",
+                                cursor: "pointer",
+                              }}
+                              className="p-1 text-light fw-bolder "
+                              onClick={() => {
+                                toast.success("Part Added to Wishlist");
+                              }}
+                            >
+                              <CiHeart
+                                style={{ color: "black" }}
+                                className="fs-5 heart-part"
+                              />
+                            </div>
+                          </div>
+                          <img
+                            src={
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
+                            }
+                            alt="suv"
+                            className=""
+                            style={{
+                              borderRadius: "6px",
+                              maxWidth: "100%",
+                            }}
+                          />
+                        </div>
+
+                        <div className="text-center mt-4">
+                          <Button
+                            style={{
+                              backgroundColor: "#00d084",
+                              border: "none",
+                              width: "max-content",
+                            }}
+                            className="w-50 p-2 text-dark fw-bolder"
+                            onClick={() => {
+                              setLoading(true);
+                              setTimeout(() => {
+                                setLoading(false);
+                                toast.success("Part Added to Cart");
+                              }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
+
+                        <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
+                          <h4 className="fs-5">
+                            Tech master New Brand Carbon ceramic brakes.
+                          </h4>
+                          </Link>
+                          <div className="fw-lighter">GHC 214.00</div>
+                        </div>
+
+                      </div>
+                   
+                  </div>
+
+          
                 </Row>
-                <Row className="mb-5">
+                <Row>
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -889,13 +865,13 @@ const Row2 = () => {
                             >
                               <CiHeart
                                 style={{ color: "black" }}
-                                className="fs-5"
+                                className="fs-5 heart-part"
                               />
                             </div>
                           </div>
                           <img
                             src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-09.png"
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
                             }
                             alt="suv"
                             className=""
@@ -920,6 +896,7 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
                             }}
                           >
                             Add to Cart
@@ -927,28 +904,23 @@ const Row2 = () => {
                         </div>
 
                         <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
                           <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
                   <div className="col">
-                    <Link
-                      style={{ textDecoration: "none", color: "black" }}
-                      to="/shop-details"
-                    >
+                   
                       <div
                         className="p-2 card-border"
                         style={{
@@ -984,13 +956,13 @@ const Row2 = () => {
                             >
                               <CiHeart
                                 style={{ color: "black" }}
-                                className="fs-5"
+                                className="fs-5 heart-part"
                               />
                             </div>
                           </div>
                           <img
                             src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-07.png"
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
                             }
                             alt="suv"
                             className=""
@@ -1015,6 +987,7 @@ const Row2 = () => {
                                 setLoading(false);
                                 toast.success("Part Added to Cart");
                               }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
                             }}
                           >
                             Add to Cart
@@ -1022,119 +995,393 @@ const Row2 = () => {
                         </div>
 
                         <div className="mt-5">
-                          <h4 className=" fs-5">
-                            Tech master New Brand Carbon ceramic brakes.
-                          </h4>
-                          <div className="fw-lighter">GHC 214.00</div>
-                        </div>
-
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
-                      </div>
-                    </Link>
-                  </div>
-                  <div className="col">
-                    <Link
+                        <Link
                       style={{ textDecoration: "none", color: "black" }}
                       to="/shop-details"
+                      className="card-border"
                     >
-                      <div
-                        className="p-2 card-border"
-                        style={{
-                          boxShadow: "none",
-                          border: "1px solid #eaeaea",
-                          borderRadius: "10px",
-                        }}
-                      >
-                        <div className="">
-                          <div
-                            style={{ position: "relative" }}
-                            className="d-flex justify-content-between mb-3"
-                          >
-                            <div
-                              style={{
-                                backgroundColor: "red",
-                                borderRadius: "4px",
-                              }}
-                              className="p-1 text-light fw-bolder px-3"
-                            >
-                              -10%
-                            </div>
-                            <div
-                              style={{
-                                backgroundColor: "white",
-                                borderRadius: "50%",
-                                cursor: "pointer",
-                              }}
-                              className="p-1 text-light fw-bolder "
-                              onClick={() => {
-                                toast.success("Part Added to Wishlist");
-                              }}
-                            >
-                              <CiHeart
-                                style={{ color: "black" }}
-                                className="fs-5"
-                              />
-                            </div>
-                          </div>
-                          <img
-                            src={
-                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-06.png"
-                            }
-                            alt="suv"
-                            className=""
-                            style={{
-                              borderRadius: "6px",
-                              maxWidth: "100%",
-                            }}
-                          />
-                        </div>
-
-                        <div className="text-center mt-4">
-                          <Button
-                            style={{
-                              backgroundColor: "#00d084",
-                              border: "none",
-                              width: "max-content",
-                            }}
-                            className="w-50 p-2 text-dark fw-bolder"
-                            onClick={() => {
-                              setLoading(true);
-                              setTimeout(() => {
-                                setLoading(false);
-                                toast.success("Part Added to Cart");
-                              }, 3000);
-                            }}
-                          >
-                            Add to Cart
-                          </Button>
-                        </div>
-
-                        <div className="mt-5">
                           <h4 className="fs-5">
                             Tech master New Brand Carbon ceramic brakes.
                           </h4>
+                          </Link>
                           <div className="fw-lighter">GHC 214.00</div>
                         </div>
 
-                        {/* <div className="text-center mt-4">
-                      <Button
-                        style={{ backgroundColor: "#00d084", border: "none" }}
-                        className="w-100 p-3 text-dark fw-bolder"
-                      >
-                        Compare Mercedes & BMW
-                      </Button>
-                    </div> */}
                       </div>
-                    </Link>
+                   
                   </div>
+                  <div className="col">
+                   
+                      <div
+                        className="p-2 card-border"
+                        style={{
+                          boxShadow: "none",
+                          border: "1px solid #eaeaea",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <div className="">
+                          <div
+                            style={{ position: "relative" }}
+                            className="d-flex justify-content-between mb-3"
+                          >
+                            <div
+                              style={{
+                                backgroundColor: "red",
+                                borderRadius: "4px",
+                              }}
+                              className="p-1 text-light fw-bolder px-3"
+                            >
+                              -10%
+                            </div>
+                            <div
+                              style={{
+                                backgroundColor: "white",
+                                borderRadius: "50%",
+                                cursor: "pointer",
+                              }}
+                              className="p-1 text-light fw-bolder "
+                              onClick={() => {
+                                toast.success("Part Added to Wishlist");
+                              }}
+                            >
+                              <CiHeart
+                                style={{ color: "black" }}
+                                className="fs-5 heart-part"
+                              />
+                            </div>
+                          </div>
+                          <img
+                            src={
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
+                            }
+                            alt="suv"
+                            className=""
+                            style={{
+                              borderRadius: "6px",
+                              maxWidth: "100%",
+                            }}
+                          />
+                        </div>
+
+                        <div className="text-center mt-4">
+                          <Button
+                            style={{
+                              backgroundColor: "#00d084",
+                              border: "none",
+                              width: "max-content",
+                            }}
+                            className="w-50 p-2 text-dark fw-bolder"
+                            onClick={() => {
+                              setLoading(true);
+                              setTimeout(() => {
+                                setLoading(false);
+                                toast.success("Part Added to Cart");
+                              }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
+
+                        <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
+                          <h4 className="fs-5">
+                            Tech master New Brand Carbon ceramic brakes.
+                          </h4>
+                          </Link>
+                          <div className="fw-lighter">GHC 214.00</div>
+                        </div>
+
+                      </div>
+                   
+                  </div>
+
+          
                 </Row>
+                <Row>
+                  <div className="col">
+                   
+                      <div
+                        className="p-2 card-border"
+                        style={{
+                          boxShadow: "none",
+                          border: "1px solid #eaeaea",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <div className="">
+                          <div
+                            style={{ position: "relative" }}
+                            className="d-flex justify-content-between mb-3"
+                          >
+                            <div
+                              style={{
+                                backgroundColor: "red",
+                                borderRadius: "4px",
+                              }}
+                              className="p-1 text-light fw-bolder px-3"
+                            >
+                              -10%
+                            </div>
+                            <div
+                              style={{
+                                backgroundColor: "white",
+                                borderRadius: "50%",
+                                cursor: "pointer",
+                              }}
+                              className="p-1 text-light fw-bolder "
+                              onClick={() => {
+                                toast.success("Part Added to Wishlist");
+                              }}
+                            >
+                              <CiHeart
+                                style={{ color: "black" }}
+                                className="fs-5 heart-part"
+                              />
+                            </div>
+                          </div>
+                          <img
+                            src={
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
+                            }
+                            alt="suv"
+                            className=""
+                            style={{
+                              borderRadius: "6px",
+                              maxWidth: "100%",
+                            }}
+                          />
+                        </div>
+
+                        <div className="text-center mt-4">
+                          <Button
+                            style={{
+                              backgroundColor: "#00d084",
+                              border: "none",
+                              width: "max-content",
+                            }}
+                            className="w-50 p-2 text-dark fw-bolder"
+                            onClick={() => {
+                              setLoading(true);
+                              setTimeout(() => {
+                                setLoading(false);
+                                toast.success("Part Added to Cart");
+                              }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
+
+                        <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
+                          <h4 className="fs-5">
+                            Tech master New Brand Carbon ceramic brakes.
+                          </h4>
+                          </Link>
+                          <div className="fw-lighter">GHC 214.00</div>
+                        </div>
+
+                      </div>
+                   
+                  </div>
+                  <div className="col">
+                   
+                      <div
+                        className="p-2 card-border"
+                        style={{
+                          boxShadow: "none",
+                          border: "1px solid #eaeaea",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <div className="">
+                          <div
+                            style={{ position: "relative" }}
+                            className="d-flex justify-content-between mb-3"
+                          >
+                            <div
+                              style={{
+                                backgroundColor: "red",
+                                borderRadius: "4px",
+                              }}
+                              className="p-1 text-light fw-bolder px-3"
+                            >
+                              -10%
+                            </div>
+                            <div
+                              style={{
+                                backgroundColor: "white",
+                                borderRadius: "50%",
+                                cursor: "pointer",
+                              }}
+                              className="p-1 text-light fw-bolder "
+                              onClick={() => {
+                                toast.success("Part Added to Wishlist");
+                              }}
+                            >
+                              <CiHeart
+                                style={{ color: "black" }}
+                                className="fs-5 heart-part"
+                              />
+                            </div>
+                          </div>
+                          <img
+                            src={
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
+                            }
+                            alt="suv"
+                            className=""
+                            style={{
+                              borderRadius: "6px",
+                              maxWidth: "100%",
+                            }}
+                          />
+                        </div>
+
+                        <div className="text-center mt-4">
+                          <Button
+                            style={{
+                              backgroundColor: "#00d084",
+                              border: "none",
+                              width: "max-content",
+                            }}
+                            className="w-50 p-2 text-dark fw-bolder"
+                            onClick={() => {
+                              setLoading(true);
+                              setTimeout(() => {
+                                setLoading(false);
+                                toast.success("Part Added to Cart");
+                              }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
+
+                        <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
+                          <h4 className="fs-5">
+                            Tech master New Brand Carbon ceramic brakes.
+                          </h4>
+                          </Link>
+                          <div className="fw-lighter">GHC 214.00</div>
+                        </div>
+
+                      </div>
+                   
+                  </div>
+                  <div className="col">
+                   
+                      <div
+                        className="p-2 card-border"
+                        style={{
+                          boxShadow: "none",
+                          border: "1px solid #eaeaea",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <div className="">
+                          <div
+                            style={{ position: "relative" }}
+                            className="d-flex justify-content-between mb-3"
+                          >
+                            <div
+                              style={{
+                                backgroundColor: "red",
+                                borderRadius: "4px",
+                              }}
+                              className="p-1 text-light fw-bolder px-3"
+                            >
+                              -10%
+                            </div>
+                            <div
+                              style={{
+                                backgroundColor: "white",
+                                borderRadius: "50%",
+                                cursor: "pointer",
+                              }}
+                              className="p-1 text-light fw-bolder "
+                              onClick={() => {
+                                toast.success("Part Added to Wishlist");
+                              }}
+                            >
+                              <CiHeart
+                                style={{ color: "black" }}
+                                className="fs-5 heart-part"
+                              />
+                            </div>
+                          </div>
+                          <img
+                            src={
+                              "https://demo-egenslab.b-cdn.net/html/drivco/preview/assets/img/inner-page/Product-01.png"
+                            }
+                            alt="suv"
+                            className=""
+                            style={{
+                              borderRadius: "6px",
+                              maxWidth: "100%",
+                            }}
+                          />
+                        </div>
+
+                        <div className="text-center mt-4">
+                          <Button
+                            style={{
+                              backgroundColor: "#00d084",
+                              border: "none",
+                              width: "max-content",
+                            }}
+                            className="w-50 p-2 text-dark fw-bolder"
+                            onClick={() => {
+                              setLoading(true);
+                              setTimeout(() => {
+                                setLoading(false);
+                                toast.success("Part Added to Cart");
+                              }, 3000);
+                               AddtoCart({name: 'Steering system (steering wheel, steering column, power steering pump)', qty: 1})
+                            }}
+                          >
+                            Add to Cart
+                          </Button>
+                        </div>
+
+                        <div className="mt-5">
+                        <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to="/shop-details"
+                      className="card-border"
+                    >
+                          <h4 className="fs-5">
+                            Tech master New Brand Carbon ceramic brakes.
+                          </h4>
+                          </Link>
+                          <div className="fw-lighter">GHC 214.00</div>
+                        </div>
+
+                      </div>
+                   
+                  </div>
+
+          
+                </Row>
+              
               </Col>
             </Row>
           </Container>

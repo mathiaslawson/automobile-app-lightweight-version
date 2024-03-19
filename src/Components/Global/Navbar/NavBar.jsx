@@ -432,7 +432,7 @@ const NavBar = () => {
                 SAVE
               </div>
               <div className="mt-2">
-                <Link to="/login">
+                <div>
                   <Button
                     className="btn btn-dark d-flex align-items-center justify-content-evenly"
                     style={{
@@ -441,13 +441,13 @@ const NavBar = () => {
                       border: "none",
                       width: "max-content",
                     }}
-                    // onClick={() => {
-                    //   if (loggedIn) {
-                    //     toggleLoginModal();
-                    //   } else {
-                    //     toggleLoginModal();
-                    //   }
-                    // }}
+                    onClick={() => {
+                      if (Object.keys(user).length > 0) {
+                        toggleLoginModal();
+                      } else {
+                        navigate('/login')
+                      }
+                    }}
                   >
                     <div>
                       <RiAccountCircleLine style={{ color: "white" }} />
@@ -458,7 +458,7 @@ const NavBar = () => {
                         : "Login"}
                     </div>
                   </Button>
-                </Link>
+                </div>
                 <Dropdown
                   isOpen={isLoginModal}
                   toggle={toggleLoginModal}
@@ -489,7 +489,9 @@ const NavBar = () => {
                             backgroundColor: "#00d084 ",
                             width: "max-content",
                             borderRadius: "5px",
+                            border: 'none'
                           }}
+                        
                           onClick={() => {
                             setLoggedIn(false);
                             setLoading(true);
@@ -498,10 +500,10 @@ const NavBar = () => {
                               setAccount({});
                               toast.success("Logged Out Successfully");
                               toggleLoginModal();
-                              window.location.href = "/";
+                              navigate("/login");
                             }, 4000);
                           }}
-                          className=" align-items-center d-flex"
+                          className="btn align-items-center d-flex"
                         >
                           {loading ? (
                             <div>
@@ -524,7 +526,6 @@ const NavBar = () => {
               </div>
               <div
                 style={{ display: Object.keys(user).length > 0 ? "" : "none" }}
-
                 className="tour-button"
               >
                 <Button
@@ -537,7 +538,7 @@ const NavBar = () => {
                   }}
                   onClick={() => {
                     dispatch(finalLogin());
-                    navigate("/login");
+                    navigate("/recieve-invoice");
                   }}
                 >
                   <div>
@@ -548,7 +549,7 @@ const NavBar = () => {
                   </div>
                 </Button>
               </div>
-{/* 
+              {/* 
               <Joyride
         run={run}
         steps={steps}

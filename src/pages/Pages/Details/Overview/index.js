@@ -5,42 +5,120 @@ import { Col, Row, Button } from "reactstrap";
 import ColorCirclesCarousel from "./ColorSide";
 import MileageTable from "./MileageTable";
 import { Link } from "react-router-dom";
+import BulletList from "./BulletList";
+import Timeline from "./Timeline";
 
 function index() {
+  const FeaturedInfo = [
+    {
+      title: "Water/Flood Damaged",
+    },
+    {
+      title: "Former Rental Car",
+    },
+    {
+      title: "Former Taxi",
+    },
+    {
+      title: "Recovered theft",
+    },
+    {
+      title: "Police Car",
+    },
+    {
+      title: "Salvage Record",
+    },
+    {
+      title: "Fuel Conversion",
+    },
+    {
+      title: "Modified Seats",
+    },
+  ];
   return (
     <>
       <div className="p-3">
         <Row className="g-3">
           <Col xxl={8}>
-            <div className="mt-5">
-              <h4>
-                Overviews
-                <img
-                  src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
-                  alt="line"
-                  width="50"
-                  className="mx-2"
-                ></img>
-              </h4>
-            </div>
-            <Table />
+            <div className="d-flex justify-content-around">
+              <div
+                style={{ border: "1px solid #e0e0e0", borderRadius: "10px" }}
+                className="px-3 mx-2"
+              >
+                <div className="mt-5">
+                  <h4>
+                    Basic Information
+                    <img
+                      src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
+                      alt="line"
+                      width="50"
+                      className="mx-2"
+                    ></img>
+                  </h4>
+                </div>
+                <Table />
 
-            {/* Engine Performance */}
-            <div>
-              <div className="mt-5">
-                <h4>
-                  Engine Performance
-                  <img
-                    src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
-                    alt="line"
-                    width="50"
-                    className="mx-2"
-                  ></img>
-                </h4>
+                <div style={{width: '100%'}}>
+                  <Timeline />
+                </div>
               </div>
 
-              <Table2 />
+              {/* Engine Performance */}
+              <div
+                style={{ border: "1px solid #e0e0e0", borderRadius: "10px" }}
+                className="px-3"
+              >
+                <div className="mt-5">
+                  <h4>
+                    Featured Information
+                    <img
+                      src="https://freesvg.org/img/roystonlodge-rough-sketch-line.png"
+                      alt="line"
+                      width="50"
+                      className="mx-2"
+                    ></img>
+                  </h4>
+                </div>
+
+                <div>
+                  <table className="w-100">
+                    {FeaturedInfo?.map((item, index) => (
+                      <tr
+                        key={index} // Adding a unique key prop to each mapped element
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(to right, #00d084, white)",
+                          borderRadius: "10px",
+                          color: "black",
+                        }}
+                      >
+                        <td
+                          style={{
+                            borderTopLeftRadius: "10px",
+                            borderBottomLeftRadius: "10px",
+                          }}
+                        >
+                          {item.title}
+                        </td>
+                        <td
+                          style={{
+                            fontWeight: "bolder",
+                            borderTopRightRadius: "10px",
+                            borderBottomRightRadius: "10px",
+                            borderRight: "1px solid white",
+                          }}
+                        >
+                          NO
+                        </td>
+                      </tr>
+                    ))}
+                  </table>
+                </div>
+
+                <BulletList />
+              </div>
             </div>
+
             {/* COlor */}
             <div>
               <div className="mt-5">
