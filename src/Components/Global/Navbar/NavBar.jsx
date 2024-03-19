@@ -340,6 +340,14 @@ const NavBar = () => {
                       </Link>
                     </li>
                     <li className="mt-2">
+                      <Link
+                        to={"/purchases"}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        Purchases
+                      </Link>
+                    </li>
+                    <li className="mt-2">
                       <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                         <DropdownToggle
                           caret
@@ -348,6 +356,7 @@ const NavBar = () => {
                             width: "max-content",
                             color: "black",
                             border: "none",
+                           
                           }}
                         >
                           Shop
@@ -445,7 +454,7 @@ const NavBar = () => {
                       if (Object.keys(user).length > 0) {
                         toggleLoginModal();
                       } else {
-                        navigate('/login')
+                        navigate("/login");
                       }
                     }}
                   >
@@ -489,9 +498,8 @@ const NavBar = () => {
                             backgroundColor: "#00d084 ",
                             width: "max-content",
                             borderRadius: "5px",
-                            border: 'none'
+                            border: "none",
                           }}
-                        
                           onClick={() => {
                             setLoggedIn(false);
                             setLoading(true);
@@ -631,7 +639,15 @@ const NavBar = () => {
                   Compare
                 </Link>
               </li>
-              <li className="mt-1">
+              <li className="mt-2">
+                <Link
+                  to={"/purchases"}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Purchase
+                </Link>
+              </li>
+              <li className="">
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                   <DropdownToggle
                     caret
@@ -640,6 +656,7 @@ const NavBar = () => {
                       width: "max-content",
                       color: "black",
                       border: "none",
+                      boxShadow: 'none'
                     }}
                   >
                     Shop

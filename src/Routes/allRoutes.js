@@ -252,6 +252,8 @@ import Checkout from '../pages/Pages/Checkout'
 import BrandCategory from '../pages/Pages/BrandCategory'
 import SingleBrand from '../pages/Pages/SingleBrandCategory'
 
+import Purchase from '../pages/Pages/Purchases'
+
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -493,8 +495,10 @@ const authProtectedRoutes = [
   { path: "/recieve-invoice", component: <RecieveInvoice /> },
   { path: "/customer-maintenance", component: <CustomerMaintenance /> },
   { path: "/sub-deal-price", component: <SubDealPrice /> },
+ 
   { path: "/public-price", component: <SubDealPrice /> },
   { path: "/customer-rating", component: <CustomerRating /> },
+  
 
 
   // this route should be at the end of all other routes
@@ -527,6 +531,7 @@ const publicRoutes = [
   { path: "/brand-category", component: <BrandCategory /> },
   { path: "/single-brand", component: <SingleBrand /> },
 
+  { path: "/purchases", component: <Purchase /> },
   //AuthenticationInner pages
   // { path: "/auth-signin-basic", component: <BasicSignIn /> },
   // { path: "/auth-signin-cover", component: <CoverSignIn /> },
