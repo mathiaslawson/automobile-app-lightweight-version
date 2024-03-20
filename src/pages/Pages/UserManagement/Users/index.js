@@ -4,11 +4,12 @@ import { isEmpty } from "lodash";
 import * as moment from "moment";
 // import './index.css'
 // import img from "./img.png";
-
+import { CiLocationOn } from "react-icons/ci";
 // Import Images
 import img from "../../../../assets/images/green.png";
 import nodata from "../../../../assets/images/nodata.png";
-
+import { FaStar } from "react-icons/fa6";
+import { MdOutlinePhone } from "react-icons/md";
 import {
   Col,
   Container,
@@ -572,6 +573,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-6.e43b0230b936ad37e477.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -581,6 +583,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-10.4d8cdbb1be43d9993ae7.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -590,6 +593,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-5.20d06b6d9ea7045fca9f.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -599,6 +603,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-6.e43b0230b936ad37e477.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -608,6 +613,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-5.20d06b6d9ea7045fca9f.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -617,6 +623,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-10.4d8cdbb1be43d9993ae7.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -626,6 +633,7 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -635,6 +643,67 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "John Doe",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-6.e43b0230b936ad37e477.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-10.4d8cdbb1be43d9993ae7.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -644,6 +713,97 @@ const CreateEvent = () => {
       created_at: "2023-11-30T02:33:41.023Z",
       event_type: "Create Vehicle",
       email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-5.20d06b6d9ea7045fca9f.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "John Doe",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-6.e43b0230b936ad37e477.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-5.20d06b6d9ea7045fca9f.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Ryan Reynolds",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-10.4d8cdbb1be43d9993ae7.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "John Doe",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      img: "https://themes.themesbrand.com/velzon/react/material/static/media/avatar-7.a991bb8ecd885f209314.jpg",
       phone: "+233559690060",
       address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
@@ -782,15 +942,15 @@ const CreateEvent = () => {
                 </CardHeader>
               </Card>
             </Col>
-            <Col xxl={9}>
+            <Col xxl={12}>
               <Card
                 id="contactList"
                 style={{
                   boxShadow: "none",
-                  backgroundColor: "white",
+                  backgroundColor: "transparent",
                   borderRadius: "40px",
                   overflow: "hidden",
-                  border: "1px solid #e0e0e0",
+                  border: "1px solid transparent",
                 }}
               >
                 <CardBody
@@ -805,20 +965,101 @@ const CreateEvent = () => {
                 >
                   <div>
                     {!loading && users.length > 0 ? (
-                      <TableContainer
-                        columns={columns}
-                        data={users || []}
-                        isGlobalFilter={true}
-                        isAddUserList={false}
-                        customPageSize={8}
-                        className="custom-header-css"
-                        divClass="table-responsive table-card mb-3"
-                        tableClass="align-middle table-nowrap"
-                        theadClass="table-light"
-                        handleContactClick={handleContactClicks}
-                        isContactsFilter={true}
-                        SearchPlaceholder="Search users..."
-                      />
+                      // <TableContainer
+                      //   columns={columns}
+                      //   data={users || []}
+                      //   isGlobalFilter={true}
+                      //   isAddUserList={false}
+                      //   customPageSize={8}
+                      //   className="custom-header-css"
+                      //   divClass="table-responsive table-card mb-3"
+                      //   tableClass="align-middle table-nowrap"
+                      //   theadClass="table-light"
+                      //   handleContactClick={handleContactClicks}
+                      //   isContactsFilter={true}
+                      //   SearchPlaceholder=""
+                      // />
+                      <>
+                        <div
+                          className="d-flex p-2 justify-content-around align-items-center"
+                          style={{ display: "block", flexWrap: "wrap" }}
+                        >
+                          {users?.map((item, key) => {
+                            return (
+                              <div
+                                className="p-2 maintenance-card m-2"
+                                style={{
+                                  display: "inline-block",
+                                  width: "20%",
+                                  borderRadius: "10px",
+                                }}
+                                // onClick={() => handleCardClick(item)}
+                                key={key}
+                              >
+                                <div className="d-flex align-items-center gap-2">
+                                  <div>
+                                    <img
+                                      src={item?.img}
+                                      alt="car"
+                                      className="img-fluid"
+                                      style={{
+                                        objectFit: "contain",
+                                        borderRadius: "10px",
+                                        width: "100px",
+                                        height: "100px",
+                                      }}
+                                    ></img>
+                                  </div>
+
+                                  <div
+                                    className="text-start"
+                                    style={{ lineHeight: "3px" }}
+                                  >
+                                    <p
+                                      className="text-muted fw-bolder"
+                                      style={{ width: "max-content" }}
+                                    >
+                                      {item?.name}
+                                    </p>
+                                    <p className="text-muted">Customer</p>
+
+                                    <p
+                                      className="text-muted mb-1"
+                                      style={{
+                                        margin: "0px",
+                                        padding: "0px",
+                                      }}
+                                    >
+                                      <MdOutlinePhone 
+                                        style={{
+                                          margin: "0px",
+                                          padding: "0px",
+                                        }}
+                                      />{" "}
+                                      +233559590050
+                                    </p>
+                                    <p
+                                      className="text-muted"
+                                      style={{
+                                        margin: "0px",
+                                        padding: "0px",
+                                      }}
+                                    >
+                                      <CiLocationOn
+                                        style={{
+                                          margin: "0px",
+                                          padding: "0px",
+                                        }}
+                                      />{" "}
+                                      Osu, Accra
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </>
                     ) : loading === true ? (
                       <Loader error={error} />
                     ) : (
@@ -859,7 +1100,6 @@ const CreateEvent = () => {
                         className="left-column"
                         xl={4}
                         style={{ overflow: "hidden", display: "hidden" }}
-                      
                       >
                         {/* Your content, image, or any other elements */}
                         <div className="text-center mt-5">
@@ -1066,387 +1306,6 @@ const CreateEvent = () => {
                                     ) : null}
                                   </div>
                                 </Col>
-
-                                {/* <Row className="mt-4">
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Color
-                                    </Label>
-                                    <Input
-                                      name="color"
-                                      id="color"
-                                      className="form-control"
-                                      placeholder="Enter Year"
-                                      type="color"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.color || ""
-                                      }
-                                      invalid={
-                                        validation.touched.color &&
-                                        validation.errors.color
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.color &&
-                                    validation.errors.color ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.color}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Color
-                                    </Label>
-                                    <Input
-                                      name="vin_number"
-                                      id="vin_number"
-                                      className="form-control"
-                                      placeholder="Enter Vin Number"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.vin_number || ""
-                                      }
-                                      invalid={
-                                        validation.touched.vin_number &&
-                                        validation.errors.vin_number
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.vin_number &&
-                                    validation.errors.vin_number ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.vin_number}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                </Row>
-                                <Row className="mt-4">
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Mileage
-                                    </Label>
-                                    <Input
-                                      name="mileage"
-                                      id="mileage"
-                                      className="form-control"
-                                      placeholder="Enter Mileage"
-                                      type="mileage"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.mileage || ""
-                                      }
-                                      invalid={
-                                        validation.touched.mileage &&
-                                        validation.errors.mileage
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.mileage &&
-                                    validation.errors.mileage ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.mileage}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Price
-                                    </Label>
-                                    <Input
-                                      name="price"
-                                      id="price"
-                                      className="form-control"
-                                      placeholder="Enter Price"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.price || ""
-                                      }
-                                      invalid={
-                                        validation.touched.price &&
-                                        validation.errors.price
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.price &&
-                                    validation.errors.price ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.price}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                </Row>
-                                <Row className="mt-4">
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Status
-                                    </Label>
-                                    <Input
-                                      name="mileage"
-                                      id="mileage"
-                                      className="form-control"
-                                      placeholder="Enter Mileage"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.mileage || ""
-                                      }
-                                      invalid={
-                                        validation.touched.mileage &&
-                                        validation.errors.mileage
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.mileage &&
-                                    validation.errors.mileage ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.mileage}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Transmission Type
-                                    </Label>
-                                    <Input
-                                      name="price"
-                                      id="price"
-                                      className="form-control"
-                                      placeholder="Enter Price"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.price || ""
-                                      }
-                                      invalid={
-                                        validation.touched.price &&
-                                        validation.errors.price
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.price &&
-                                    validation.errors.price ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.price}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                </Row>
-                                <Row className="mt-4">
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Engine Size
-                                    </Label>
-                                    <Input
-                                      name="engine_size"
-                                      id="engine_size"
-                                      className="form-control"
-                                      placeholder="Enter Engine Size"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.engine_size || ""
-                                      }
-                                      invalid={
-                                        validation.touched.engine_size &&
-                                        validation.errors.engine_size
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.engine_size &&
-                                    validation.errors.engine_size ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.engine_size}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Resgistration Plate
-                                    </Label>
-                                    <Input
-                                      name="registration_plate"
-                                      id="registration_plate"
-                                      className="form-control"
-                                      placeholder="Enter Registration Plate"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.registration_plate || ""
-                                      }
-                                      invalid={
-                                        validation.touched.registration_plate &&
-                                        validation.errors.registration_plate
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.registration_plate &&
-                                    validation.errors.registration_plate ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.registration_plate}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                </Row>
-                                <Row className="mt-4">
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Purchase Date
-                                    </Label>
-                                    <Input
-                                      name="purchase_date"
-                                      id="purchase_date"
-                                      className="form-control"
-                                      placeholder="Enter Engine Size"
-                                      type="time"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.purchase_date || ""
-                                      }
-                                      invalid={
-                                        validation.touched.purchase_date &&
-                                        validation.errors.purchase_date
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.purchase_date &&
-                                    validation.errors.purchase_date ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.purchase_date}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                <Col lg={6}>
-                                  <div>
-                                    <Label
-                                      htmlFor="role_name"
-                                      className="form-label"
-                                    >
-                                      Purchase Price
-                                    </Label>
-                                    <Input
-                                      name="purchase_price"
-                                      id="purchase_price"
-                                      className="form-control"
-                                      placeholder="Enter Purchase Price"
-                                      type="text"
-                                      validate={{
-                                        required: { value: true },
-                                      }}
-                                      onChange={validation.handleChange}
-                                      onBlur={validation.handleBlur}
-                                      value={
-                                        validation.values.purchase_price || ""
-                                      }
-                                      invalid={
-                                        validation.touched.purchase_price &&
-                                        validation.errors.purchase_price
-                                          ? true
-                                          : false
-                                      }
-                                    />
-                                    {validation.touched.purchase_price &&
-                                    validation.errors.purchase_price ? (
-                                      <FormFeedback type="invalid">
-                                        {validation.errors.purchase_price}
-                                      </FormFeedback>
-                                    ) : null}
-                                  </div>
-                                </Col>
-                                </Row> */}
                               </Row>
                             </ModalBody>
                             <ModalFooter>
@@ -1454,11 +1313,11 @@ const CreateEvent = () => {
                                 <button
                                   type="button"
                                   className="btn btn-light"
-                                   style={{
+                                  style={{
                                     backgroundColor: "#8b3af8",
                                     color: "white",
                                     boxShadow: "none",
-                                    borderRadius: '20px'
+                                    borderRadius: "20px",
                                   }}
                                   onClick={() => {
                                     setModal(false);
@@ -1477,7 +1336,7 @@ const CreateEvent = () => {
                                     border: "1px solid #8b3af8",
                                     color: "black",
                                     boxShadow: "none",
-                                    borderRadius: '20px'
+                                    borderRadius: "20px",
                                   }}
                                   id="add-btn"
                                 >
@@ -1496,7 +1355,7 @@ const CreateEvent = () => {
               </Card>
             </Col>
 
-            <Col xxl={3}>
+            {/* <Col xxl={3}>
               <Card
                 id="contact-view-detail"
                 style={{
@@ -1509,11 +1368,7 @@ const CreateEvent = () => {
               >
                 <CardBody className="text-center">
                   <div className="position-relative d-inline-block">
-                    {/* <img
-                      src={process.env.REACT_APP_API_URL + "/images/users/" + (info.image_src || "avatar-10.jpg")}
-                      alt=""
-                      className="avatar-lg rounded-circle img-thumbnail"
-                    /> */}
+                  
                     <span className="contact-active position-absolute rounded-circle bg-success">
                       <span className="visually-hidden"></span>
                     </span>
@@ -1523,10 +1378,7 @@ const CreateEvent = () => {
                   <div className="table-responsive table-card">
                     <Table className="table table-borderless mb-0">
                       <tbody>
-                        {/* <tr>
-                          <td className="fw-medium">Name</td>
-                          <td>{info.category_name}</td>
-                        </tr> */}
+                      
                       </tbody>
                     </Table>
 
@@ -1567,13 +1419,21 @@ const CreateEvent = () => {
                         className="p-3 fw-light text-muted"
                       >
                         <i className="bx bx-error-circle fw-bolder text-dark mx-2 mt-2 fs-5"></i>
-                        Streamline user management for your platform with our intuitive module. Effortlessly create and customize user profiles, allowing you to document important information and preferences. Our user-friendly interface simplifies the process, ensuring efficient tracking and organization of user-related data. Enhance your ability to manage users by effortlessly creating, updating, and recording user information through our accessible module. With our platfo
+                        Streamline user management for your platform with our
+                        intuitive module. Effortlessly create and customize user
+                        profiles, allowing you to document important information
+                        and preferences. Our user-friendly interface simplifies
+                        the process, ensuring efficient tracking and
+                        organization of user-related data. Enhance your ability
+                        to manage users by effortlessly creating, updating, and
+                        recording user information through our accessible
+                        module. With our platfo
                       </p>
                     </div>
                   </div>
                 </CardBody>
               </Card>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </div>
