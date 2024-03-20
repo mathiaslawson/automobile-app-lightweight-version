@@ -1,4 +1,4 @@
-import Toaster, { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 
 const AddtoCart = (product) => {
   let storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -16,9 +16,7 @@ const AddtoCart = (product) => {
   }
 
 
-  return(
-   <Toaster />
-  )
+ 
 };
 
 export default AddtoCart;

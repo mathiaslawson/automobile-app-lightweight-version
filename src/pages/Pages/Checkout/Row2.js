@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Row, Col, Button } from "reactstrap";
 import img from "./img.png";
+import {toast} from 'react-toastify'
+import {useNavigate} from 'react-router-dom'
 
 function Row2() {
   const [method, setMethod] = useState("pal");
+  const navigate = useNavigate()
 
   return (
     <>
@@ -457,6 +460,10 @@ function Row2() {
                             backgroundColor: "#00d084",
                             color: "black",
                             border: "none",
+                          }}
+                          onClick={()=>{
+                            toast.success("Order Place Successfully, Check your Dashbord to view purchases")
+                            navigate('/purchases')
                           }}
                         >
                           Place Order

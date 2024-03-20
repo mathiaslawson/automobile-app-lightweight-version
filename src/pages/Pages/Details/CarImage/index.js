@@ -16,8 +16,9 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { BsTelephone } from "react-icons/bs";
 import { FaWhatsapp } from "react-icons/fa";
 import { LuSend } from "react-icons/lu";
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import { Spinner } from "reactstrap";
+import {Link} from 'react-router-dom'
 
 function Index() {
   const [view, setView] = useState("exterior");
@@ -292,6 +293,21 @@ function Index() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-5">
+             <Link to="/shop-checkout">
+             <Button
+                className="w-100 p-3"
+                style={{
+                  boxShadow: "none",
+                  backgroundColor: "#00d084",
+                  border: "none",
+                }}
+              >
+                Purchase Car
+              </Button>
+             </Link>
+            </div>
           </Col>
           <Col xxl={4}>
             <div
@@ -316,7 +332,13 @@ function Index() {
                 <h4>Local Office in Ghana</h4>
                 <h6 className="text-muted">AutoMobile Gh</h6>
                 <p className="fw-bolder">Daniel James</p>
-                <p><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f1ec-1f1ed.svg" alt="flag" style={{width: '30px', height:'30px'}}></img></p>
+                <p>
+                  <img
+                    src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f1ec-1f1ed.svg"
+                    alt="flag"
+                    style={{ width: "30px", height: "30px" }}
+                  ></img>
+                </p>
                 <p className="text-muted">English</p>
               </div>
               <Button

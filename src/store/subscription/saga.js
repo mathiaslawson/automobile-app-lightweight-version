@@ -3,7 +3,7 @@ import { call, put, takeEvery, all, fork } from "redux-saga/effects";
 // import { toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
-import toast from "react-hot-toast";
+import toast from 'react-toastify';
 
 // Ecoomerce Redux States
 import {

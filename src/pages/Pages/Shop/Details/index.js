@@ -22,7 +22,7 @@ import RelatedParts from "../../../../Components/Customer/common/Band/Slider/Rel
 import RecentlyViewedParts from "../../../../Components/Customer/common/Band/Slider/RecentlyViewedParts";
 import './style.css'
 
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import {
   FacebookShareButton,
   TwitterShareButton,

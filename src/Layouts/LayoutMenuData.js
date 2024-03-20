@@ -1436,21 +1436,21 @@ const Navdata = () => {
       },
     },
 
-    // {
-    //   label: "Tracking",
-    //   isHeader: true,
-    // },
+    {
+      label: "Purchases",
+      isHeader: true,
+    },
 
-    // {
-    //   id: "widgets",
-    //   label: "Tracking",
-    //   icon: "bx bx-rocket",
-    //   link: "/tracking",
-    //   click: function (e) {
-    //     e.preventDefault();
-    //     setIscurrentState("Widgets");
-    //   },
-    // },
+    {
+      id: "widgets",
+      label: "Purchases",
+      icon: "bx bx-rocket",
+      link: "/customer-purchases",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
     {
       label: "Trades",
       isHeader: true,
@@ -1568,26 +1568,26 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
-    {
-      id: "widgets",
-      label: "Sub Deal Pricing",
-      icon: "bx bx-dollar",
-      link: "/sub-deal-price",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
-    {
-      id: "widgets",
-      label: "Public Pricing",
-      icon: "bx bxs-badge-dollar",
-      link: "/public-pricee",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
+    // {
+    //   id: "widgets",
+    //   label: "Sub Deal Pricing",
+    //   icon: "bx bx-dollar",
+    //   link: "/sub-deal-price",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIscurrentState("Widgets");
+    //   },
+    // },
+    // {
+    //   id: "widgets",
+    //   label: "Public Pricing",
+    //   icon: "bx bxs-badge-dollar",
+    //   link: "/public-pricee",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIscurrentState("Widgets");
+    //   },
+    // },
 
     {
       label: "Invoices",
@@ -1713,35 +1713,35 @@ const Navdata = () => {
       },
     },
 
-    {
-      label: "Inventory",
-      isHeader: true,
-    },
+    // {
+    //   label: "Inventory",
+    //   isHeader: true,
+    // },
 
-    {
-      id: "advanceUi",
-      label: "Inventory",
-      icon: "mdi mdi-layers-triple-outline",
-      link: "/vehicles",
-      click: function (e) {
-        e.preventDefault();
-        setIsAdvanceUi(!isAdvanceUi);
-        setIscurrentState("AdvanceUi");
-        updateIconSidebar(e);
-      },
-    },
+    // {
+    //   id: "advanceUi",
+    //   label: "Inventory",
+    //   icon: "mdi mdi-layers-triple-outline",
+    //   link: "/vehicles",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIsAdvanceUi(!isAdvanceUi);
+    //     setIscurrentState("AdvanceUi");
+    //     updateIconSidebar(e);
+    //   },
+    // },
 
-    {
-      id: "tables",
-      label: "Vehicles",
-      icon: "mdi mdi-grid-large",
-      link: "/Inventory",
-      click: function (e) {
-        e.preventDefault();
-        setIsTables(!isTables);
-        setIscurrentState("Tables");
-      },
-    },
+    // {
+    //   id: "tables",
+    //   label: "Vehicles",
+    //   icon: "mdi mdi-grid-large",
+    //   link: "/Inventory",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIsTables(!isTables);
+    //     setIscurrentState("Tables");
+    //   },
+    // },
 
     {
       label: "Sales",
@@ -1758,16 +1758,16 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
-    {
-      id: "widgets",
-      label: "Sub Deal Pricing",
-      icon: "bx bx-wallet",
-      link: "/sub-deal-price",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
+    // {
+    //   id: "widgets",
+    //   label: "Sub Deal Pricing",
+    //   icon: "bx bx-wallet",
+    //   link: "/sub-deal-price",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIscurrentState("Widgets");
+    //   },
+    // },
 
     {
       label: "Invoices",

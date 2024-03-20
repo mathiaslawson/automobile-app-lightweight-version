@@ -41,7 +41,7 @@ import { Container } from "reactstrap";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io5";
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import { FaPowerOff } from "react-icons/fa6";
 import {
   Dropdown,

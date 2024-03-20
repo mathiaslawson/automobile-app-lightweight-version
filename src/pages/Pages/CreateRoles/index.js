@@ -612,7 +612,7 @@ const CreateRoles = () => {
                         theadClass="table-light"
                         handleContactClick={handleContactClicks}
                         isContactsFilter={true}
-                        SearchPlaceholder="Search for roles..."
+                        SearchPlaceholder=""
                       />
                     ) : loading === true ? (
                       <Loader error={error} />

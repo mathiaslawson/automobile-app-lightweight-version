@@ -230,7 +230,7 @@ import Tracking from "../pages/Pages/Tracking";
 import Invoices from "../pages/Pages/Invoices";
 import Inventory from "../pages/Pages/Inventory/Inventory";
 import Repairs from '../pages/Pages/Repairs/VehicleRepairs'
-import Trades from '../pages/Pages/Trading/VehicleTrades'
+import Trades from '../pages/Pages/Trading/Events/'
 import UserManagement from '../pages/Pages/UserManagement/Users'
 import MechRatings from '../pages/Pages/Rating/UserRatings'
 import Reports from '../pages/Pages/Reports/Mech'
@@ -254,6 +254,7 @@ import SingleBrand from '../pages/Pages/SingleBrandCategory'
 
 import Purchase from '../pages/Pages/Purchases'
 import MaintenanceRequests from '../pages/Pages/MaintenanceRequest/'
+import CustomerPurchases from '../pages/Pages/CustomerPurchases/Purchase'
 
 
 // import FileManager from "../pages/FileManager";
@@ -500,6 +501,7 @@ const authProtectedRoutes = [
   { path: "/public-price", component: <SubDealPrice /> },
   { path: "/customer-rating", component: <CustomerRating /> },
   { path: "/maintenance-requests", component: <MaintenanceRequests /> },
+  { path: "/customer-purchases", component: <CustomerPurchases /> },
   
   
 

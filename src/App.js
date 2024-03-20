@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
 //import Scss
-import './assets/scss/themes.scss';
+import "./assets/scss/themes.scss";
 
 //imoprt Route
-import Route from './Routes';
+import Route from "./Routes";
 
 // Import Firebase Configuration file
 // import { initFirebaseBackend } from "./helpers/firebase_helper";
-
-// Fake Backend 
+import Toaster from 'react-toastify';
+// Fake Backend
 import fakeBackend from "./helpers/AuthType/fakeBackend";
-
+import { ToastContainer, toast } from 'react-toastify';
 // Activating fake backend
 fakeBackend();
 
@@ -29,21 +29,15 @@ fakeBackend();
 // init firebase backend
 // initFirebaseBackend(firebaseConfig);
 
-
-
-
 function App() {
 
-
-  useEffect(()=>{
-    //  window.scrollTo(window.innerWidth, window.innerHeight)
-    window.scroll(0, 120)
-  }, [])
-
+ 
 
   return (
     <React.Fragment>
+     
       <Route />
+      <ToastContainer />
     </React.Fragment>
   );
 }

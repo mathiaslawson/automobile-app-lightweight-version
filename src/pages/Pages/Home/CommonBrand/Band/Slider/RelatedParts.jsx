@@ -23,7 +23,7 @@ import { CiHeart } from "react-icons/ci";
 import "react-multi-carousel/lib/styles.css";
 // import ImageSlider from "./ImageSlider";
 import { useState } from "react";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster, toast } from 'react-toastify';
 
 const RelatedParts = () => {
   const [cursor, setCursor] = useState("grab");

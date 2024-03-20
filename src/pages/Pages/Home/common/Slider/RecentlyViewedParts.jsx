@@ -14,7 +14,7 @@ import { Button } from "reactstrap";
 import { FaTruckFast } from "react-icons/fa6";
 import { Card } from "reactstrap";
 import { Link } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import {
   PiArrowCircleLeftLight,
   PiArrowCircleRightLight,

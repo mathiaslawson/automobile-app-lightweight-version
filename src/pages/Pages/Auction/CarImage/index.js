@@ -16,7 +16,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { BsTelephone } from "react-icons/bs";
 import { FaWhatsapp } from "react-icons/fa";
 import { LuSend } from "react-icons/lu";
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import { Spinner } from "reactstrap";
 
 function Index() {

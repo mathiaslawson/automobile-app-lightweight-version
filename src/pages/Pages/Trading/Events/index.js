@@ -4,12 +4,17 @@ import { isEmpty } from "lodash";
 import * as moment from "moment";
 // import './index.css'
 // import img from "./img.png";
-import benz from "./benz.png";
 
 // Import Images
 
 import nodata from "../../../../assets/images/nodata.png";
-
+import img from "../../../../assets/images/green.png";
+import profile1 from "../../../../common/Profiles/profile1.png";
+import profile2 from "../../../../common/Profiles/profile2.png";
+import profile3 from "../../../../common/Profiles/profile3.png";
+import profile4 from "../../../../common/Profiles/profile4.png";
+import profile5 from "../../../../common/Profiles/profile5.png";
+import { FaCaretRight } from "react-icons/fa6";
 import {
   Col,
   Container,
@@ -52,15 +57,16 @@ import TableContainer from "../../../../Components/Common/TableContainer";
 // Formik
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import img from "../../../../assets/images/green.png";
+
 import Loader from "../../../../Components/Common/Loader";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Export Modal
 import ExportCSVModal from "../../../../Components/Common/ExportCSVModal";
+import Timeline from "./Timeline/Timeline";
 
-const VehicleMake = () => {
+const Events = () => {
   const dispatch = useDispatch();
   const {
     categories,
@@ -175,14 +181,18 @@ const VehicleMake = () => {
 
     initialValues: {
       // img: (contact && contact.img) || '',
-      make_name: (contact && contact.role_name) || "",
-      //   description: (contact && contact.description) || "",
-      //   is_system: (contact && contact.is_system) || "",
+      vehicle_id: (contact && contact.vehicle_id) || "",
+      event_type: (contact && contact.customer_id) || "",
+      event_description: (contact && contact.service_id) || "",
+      event_date: (contact && contact.service_date) || "",
     },
     validationSchema: Yup.object({
-      make_name: Yup.string().required("Please enter vehicle make name"),
-      //     description: Yup.string().required("Please enter description"),
-      //   is_system: Yup.string().required("Should the creator of this role be able the adminstrator"),
+      vehicle_id: Yup.string().required("This field should not be empty"),
+      event_type: Yup.string().required("This field should not be empty"),
+      event_description: Yup.string().required(
+        "This field should not be empty"
+      ),
+      event_date: Yup.string().required("This field should not be empty"),
     }),
     onSubmit: (values) => {
       if (isEdit) {
@@ -317,33 +327,19 @@ const VehicleMake = () => {
       // },
 
       {
-        Header: "Make Name",
-        Cell: (contact) => (
-          <>
-            <div className="d-flex">
-              <div>
-                <img
-                  src={
-                    contact.row.original.make_name === "Audi"
-                      ? "https://www.shutterstock.com/image-vector/audi-logo-icon-metal-circle-600nw-2269704655.jpg"
-                      : contact.row.original.make_name === "BMW"
-                      ? "https://www.cittoncars.co.za/wp-content/uploads/2023/06/bmw-logo-1997.jpg"
-                      : contact.row.original.make_name === "Cadlliac"
-                      ? "https://i.pinimg.com/736x/a9/01/5e/a9015e3d7a1416fabaa39167701802d1.jpg"
-                      : benz
-                  }
-                  alt="img"
-                  width="50"
-                ></img>
-              </div>
-              <div>
-                <p className="fw-bolder text-muted mt-2 mx-3">
-                  {contact.row.original.make_name}
-                </p>
-              </div>
-            </div>
-          </>
-        ),
+        Header: "Vehicle Name",
+        accessor: "name",
+        filterable: false,
+      },
+      {
+        Header: "Event Type",
+        accessor: "event_type",
+        filterable: false,
+      },
+      {
+        Header: "Event Description",
+        accessor: "description",
+        filterable: false,
       },
 
       {
@@ -353,6 +349,17 @@ const VehicleMake = () => {
             {handleValidDate(contact.row.original.created_at)},{" "}
             <small className="text-muted">
               {handleValidTime(contact.row.original.created_at)}
+            </small>
+          </>
+        ),
+      },
+      {
+        Header: "Event Date",
+        Cell: (contact) => (
+          <>
+            {handleValidDate(contact.row.original.event_date)},{" "}
+            <small className="text-muted">
+              {handleValidTime(contact.row.original.event_date)}
             </small>
           </>
         ),
@@ -378,7 +385,7 @@ const VehicleMake = () => {
                     href="#"
                     className="btn btn-sm dropdown"
                     tag="button"
-                    style={{ backgroundColor: "transparent" }}
+                    style={{ boxShadow: "none", fontWeight: "bolder" }}
                   >
                     <i className="ri-more-fill align-middle"></i>
                   </DropdownToggle>
@@ -436,20 +443,125 @@ const VehicleMake = () => {
   // Export Modal
   const [isExportCSV, setIsExportCSV] = useState(false);
 
-  document.title = "Create user roles | Auomobile - ADMINUI";
+  document.title = "Vehicle Type | Auomobile - ADMINUI";
 
-  const options = [
+  const cars = [
     {
-      value: "Yes",
-      label: "Yes",
+      value: "BMW m5 Competetion",
+      label: "BMW m5 Competetion",
     },
     {
-      value: "No",
-      label: "No",
+      value: "BMW m8 Coupe",
+      label: "BMW m8 Coupe",
     },
   ];
 
-  let activateOptions = options?.map(function (item) {
+  const options = [
+    {
+      value: "4.5 L Tank",
+      label: "4.5 L Tank",
+    },
+  ];
+
+  const make = [
+    {
+      value: "BMW",
+      label: "BMW",
+    },
+    {
+      value: "Audi",
+      label: "Audi",
+    },
+  ];
+  const type = [
+    {
+      value: "Electric",
+      label: "Electric",
+    },
+    {
+      value: "Manual",
+      label: "Manual",
+    },
+  ];
+  const year = [
+    {
+      value: "2023",
+      label: "2023",
+    },
+  ];
+
+  const status = [
+    {
+      value: "4.5 L Tank",
+      label: "4.5 L Tank",
+    },
+  ];
+
+  const price = [
+    {
+      value: "Tier 1 Price",
+      label: "Tier 1 Price",
+    },
+  ];
+  const deal = [
+    {
+      value: "Kwesi Kain",
+      label: "Kwesi Kain",
+    },
+    {
+      value: "Harry James",
+      label: "Harry James",
+    },
+  ];
+  const service = [
+    {
+      value: "Fuel Change",
+      label: "Fuel Change",
+    },
+    {
+      value: "Spark Plug Change",
+      label: "Spark Plug Change",
+    },
+  ];
+
+  let featureOptions = options?.map(function (item) {
+    return {
+      value: item.value,
+      label: item.label,
+    };
+  });
+
+  let vehicleOptions = cars?.map(function (item) {
+    return {
+      value: item.value,
+      label: item.label,
+    };
+  });
+  let makeOptions = make?.map(function (item) {
+    return {
+      value: item.value,
+      label: item.label,
+    };
+  });
+  let typeOptions = type?.map(function (item) {
+    return {
+      value: item.value,
+      label: item.label,
+    };
+  });
+  let pricingOptions = price?.map(function (item) {
+    return {
+      value: item.value,
+      label: item.label,
+    };
+  });
+  let dealerOptions = deal?.map(function (item) {
+    return {
+      value: item.value,
+      label: item.label,
+    };
+  });
+  let serviceOptions = service?.map(function (item) {
     return {
       value: item.value,
       label: item.label,
@@ -458,20 +570,28 @@ const VehicleMake = () => {
 
   const users = [
     {
-      make_name: "Mercedes Benz",
-      created_at: "2021-09-01T18:30:00.000Z",
+      name: "BMW M5 Competition",
+      created_at: "2023-11-30T02:33:41.023Z",
+      img: profile2,
+      event_type: "Repair",
+      description: "This is a repairs and maintenance tracking descriptions",
+      event_date: "2023-11-30T02:33:41.023Z",
     },
     {
-      make_name: "Audi",
-      created_at: "2021-09-01T18:30:00.000Z",
+      name: "BMW M5 Competition",
+      created_at: "2023-11-30T02:33:41.023Z",
+      img: profile2,
+      event_type: "Maintenance",
+      description: "This is a repairs and maintenance tracking descriptions",
+      event_date: "2023-11-30T02:33:41.023Z",
     },
     {
-      make_name: "BMW",
-      created_at: "2021-09-01T18:30:00.000Z",
-    },
-    {
-      make_name: "Cadlliac",
-      created_at: "2021-09-01T18:30:00.000Z",
+      name: "BMW M5 Competition",
+      created_at: "2023-11-30T02:33:41.023Z",
+      img: profile2,
+      event_type: "Maintenance",
+      description: "This is a repairs and maintenance tracking descriptions",
+      event_date: "2023-11-30T02:33:41.023Z",
     },
   ];
 
@@ -500,8 +620,9 @@ const VehicleMake = () => {
         />
 
         <Container fluid>
+          {/* <BreadCrumb title="Create User Roles" pageTitle="System Roles" /> */}
           <Row>
-            <Col lg={12}>
+          <Col lg={12}>
               <Card
                 style={{
                   boxShadow: "none",
@@ -511,7 +632,15 @@ const VehicleMake = () => {
                   border: "1px solid #e0e0e0",
                 }}
               >
-                <CardHeader>
+                <CardHeader
+                  style={{
+                    backgroundColor: "white",
+                    border: "1px solid transparent",
+                    borderRadius: "10px",
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                >
                   <div className="d-flex align-items-center flex-wrap gap-2">
                     <div className="flex-grow-1">
                       <button
@@ -525,7 +654,7 @@ const VehicleMake = () => {
                         disabled={
                           updateloadding || saveloadding === true ? true : false
                         }
-                        className="btn add-btn"
+                        className="btn "
                         onClick={() => {
                           setModal(true);
                         }}
@@ -537,9 +666,13 @@ const VehicleMake = () => {
                         )} */}
                         <i
                           className="bx bx-plus mx-1"
-                          style={{ position: "relative", top: "0.1rem" }}
+                          style={{
+                            position: "relative",
+                            top: "0.1rem",
+                            fontWeight: "bolder",
+                          }}
                         ></i>
-                        Create Vehicle Make
+                        Trade Vehicle
                         {/* {updateloadding || saveloadding === true ? (
                           <SaveLoader />
                         ) : (
@@ -551,7 +684,13 @@ const VehicleMake = () => {
                       <div className="hstack text-nowrap gap-2">
                         {isMultiDeleteButton && (
                           <button
-                            className="btn btn-soft-danger"
+                            className="btn"
+                            style={{
+                              backgroundColor: "#8b3af8",
+                              color: "gray",
+                              boxShadow: "none",
+                              fontWeight: "bolder",
+                            }}
                             onClick={() => setDeleteModalMulti(true)}
                           >
                             <i className="ri-delete-bin-2-line"></i>
@@ -562,14 +701,15 @@ const VehicleMake = () => {
                           Filters
                         </button> */}
                         <button
-                          className="btn btn-soft-success"
-                          onClick={() => setIsExportCSV(true)}
+                          className="btn "
                           style={{
                             boxShadow: "none",
+                            backgroundColor: "white",
                             borderRadius: "20px",
                             overflow: "hidden",
                             border: "1px solid #e0e0e0",
                           }}
+                          onClick={() => setIsExportCSV(true)}
                         >
                           Export
                         </button>
@@ -595,34 +735,153 @@ const VehicleMake = () => {
                 </CardHeader>
               </Card>
             </Col>
-            <Col xxl={6}>
+            <Col xxl={12}>
               <Card
                 id="contactList"
                 style={{
                   boxShadow: "none",
-                  backgroundColor: "white",
+                  backgroundColor: "transparent",
                   borderRadius: "40px",
                   overflow: "hidden",
-                  border: "1px solid #e0e0e0",
+                  border: "1px solid transparent",
                 }}
               >
-                <CardBody className="pt-0">
+                <CardBody
+                  className="pt-0"
+                  style={{
+                    backgroundColor: "transpaernt",
+                    border: "1px solid transparent",
+                    borderRadius: "10px",
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                >
                   <div>
                     {!loading && users.length > 0 ? (
-                      <TableContainer
-                        columns={columns}
-                        data={users || []}
-                        isGlobalFilter={true}
-                        isAddUserList={false}
-                        customPageSize={8}
-                        className="custom-header-css"
-                        divClass="table-responsive table-card mb-3"
-                        tableClass="align-middle table-nowrap"
-                        theadClass="table-light"
-                        handleContactClick={handleContactClicks}
-                        isContactsFilter={true}
-                        SearchPlaceholder=""
-                      />
+                      // <TableContainer
+                      //   columns={columns}
+                      //   data={users || []}
+                      //   isGlobalFilter={true}
+                      //   isAddUserList={false}
+                      //   customPageSize={8}
+                      //   className="custom-header-css"
+                      //   divClass="table-responsive table-card mb-3"
+                      //   tableClass="align-middle table-nowrap"
+                      //   theadClass="table-light"
+                      //   handleContactClick={handleContactClicks}
+                      //   isContactsFilter={true}
+                      //   SearchPlaceholder=""
+                      // />
+                      <>
+                        <div
+                          className=""
+                          style={{ display: "block", flexWrap: "wrap" }}
+                        >
+                          {users?.map((item, key) => {
+                            return (
+                              <div
+                                className="p-2 maintenance-card m-2"
+                                style={{
+                                  display: "inline-block",
+                                  width: "100%",
+                                  borderRadius: "10px",
+                                }}
+                                // onClick={() => handleCardClick(item)}
+                                key={key}
+                              >
+                                <div className="d-flex justify-content-around align-items-center">
+                                  <div>
+                                    <div>
+                                      <img
+                                        src={item?.img}
+                                        alt="car"
+                                        className="img-fluid"
+                                        style={{ objectFit: "contain" }}
+                                      ></img>
+                                    </div>
+
+                                    <div className="d-flex align-items-center gap-2">
+                                      <div>
+                                        <img
+                                          src={item?.img}
+                                          alt="car"
+                                          className="img-fluid"
+                                          style={{
+                                            objectFit: "contain",
+                                            borderRadius: "10px",
+                                            width: "100px",
+                                            height: "100px",
+                                          }}
+                                        ></img>
+                                      </div>
+
+                                      <div
+                                        className="text-start"
+                                        style={{ lineHeight: "3px" }}
+                                      >
+                                        <p
+                                          className="text-muted fw-bolder"
+                                          style={{ width: "max-content" }}
+                                        >
+                                          {item?.name}
+                                        </p>
+                                        <p className="text-muted">
+                                          WiseMan AutoShop
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div className="text-center">
+                                    <p className="text-muted fs-5 fw-bolder">GHC 400,000.00</p>
+                                  <FaCaretRight className="fs-2"/>
+                                  </div>
+                                  <div className="">
+                                    <div>
+                                      <img
+                                        src={item?.img}
+                                        alt="car"
+                                        className="img-fluid"
+                                        style={{ objectFit: "contain" }}
+                                      ></img>
+                                    </div>
+                                    <div className="d-flex align-items-center gap-2">
+                                      <div>
+                                        <img
+                                          src={profile3}
+                                          alt="car"
+                                          className="img-fluid"
+                                          style={{
+                                            objectFit: "contain",
+                                            borderRadius: "10px",
+                                            width: "100px",
+                                            height: "100px",
+                                          }}
+                                        ></img>
+                                      </div>
+
+                                      <div
+                                        className="text-start"
+                                        style={{ lineHeight: "3px" }}
+                                      >
+                                        <p
+                                          className="text-muted fw-bolder"
+                                          style={{ width: "max-content" }}
+                                        >
+                                          {"Audi Rs8"}
+                                        </p>
+                                        <p className="text-muted">
+                                         Audi Motors Ghana
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </>
                     ) : loading === true ? (
                       <Loader error={error} />
                     ) : (
@@ -635,8 +894,8 @@ const VehicleMake = () => {
                             width="400"
                           ></img>
                         </p>
-                        <p className="hstack justify-content-center d-flex mt-4 fw-bolder">
-                          You have no vehicle makes setup yet{" "}
+                        <p className="hstack justify-content-center d-flex mt-4 fw-bolder text-light">
+                          You have no roles setup yet{" "}
                         </p>
                       </>
                     )}
@@ -662,14 +921,12 @@ const VehicleMake = () => {
                         md={4}
                         className="left-column"
                         xl={4}
-                         style={{ overflow: "hidden", display: 'none' }}
+                        style={{ overflow: "hidden", display: "none" }}
                       >
                         {/* Your content, image, or any other elements */}
                         <div className="text-center mt-5">
                           <p className="text-dark fw-bolder">
-                            {!!isEdit
-                              ? "Update Vehicle Make"
-                              : "Create Vehicle Make"}
+                            {!!isEdit ? "Update Event" : "Add Event"}
                           </p>
                         </div>
                         <div className="content mt-2">
@@ -695,37 +952,178 @@ const VehicleMake = () => {
                             <ModalBody>
                               <Input type="hidden" id="id-field" />
                               <Row className="g-3">
+                                <Col className="mt-4" lg={12}>
+                                  <p className=" mb-2">
+                                    {" "}
+                                    <Link
+                                      to="#"
+                                      className="float-end text-decoration-underline"
+                                    ></Link>
+                                    Select Vehicle
+                                  </p>
+
+                                  <Select
+                                    name="vehicle_id"
+                                    value={vehicleOptions.find(function (e) {
+                                      return (
+                                        (!isEdit ? e.label : e.value) ===
+                                        validation.values.vehicle_id
+                                      );
+                                    })}
+                                    onChange={(e) =>
+                                      validation.setFieldValue(
+                                        "vehicle_id",
+                                        e.value
+                                      )
+                                    }
+                                    className="mb-0"
+                                    options={vehicleOptions}
+                                    id="taginput-choices"
+                                  ></Select>
+                                  <p style={{ color: "red" }} className="mt-2">
+                                    {validation.errors.vehicle_id}
+                                  </p>
+                                </Col>
+                                {/* 
+                              <Col className="mt-4" lg={12}>
+                                  <p className=" mb-2">
+                                    {" "}
+                                    <Link
+                                      to="#"
+                                      className="float-end text-decoration-underline"
+                                    ></Link>
+                                    Select Service 
+                                  </p>
+
+                                  <Select
+                                    name="service_id"
+                                    value={serviceOptions.find(function (e) {
+                                      return (
+                                        (!isEdit ? e.label : e.value) ===
+                                        validation.values.service_id
+                                      );
+                                    })}
+                                    onChange={(e) =>
+                                      validation.setFieldValue(
+                                        "service_id",
+                                        e.value
+                                      )
+                                    }
+                                    className="mb-0"
+                                    options={serviceOptions}
+                                    id="taginput-choices"
+                                  ></Select>
+                                  <p style={{ color: "red" }} className="mt-2">
+                                    {validation.errors.service_id}
+                                  </p>
+                                </Col> */}
+
                                 <Col lg={12}>
                                   <div>
                                     <Label
                                       htmlFor="role_name"
                                       className="form-label"
                                     >
-                                      Vehicle Make Name
+                                      Event Type
                                     </Label>
                                     <Input
-                                      name="make_name"
-                                      id="make_name"
+                                      name="event_type"
+                                      id="event_type"
                                       className="form-control"
-                                      placeholder="Enter Vehicle Make Name"
+                                      placeholder="Enter Event Type"
                                       type="text"
                                       validate={{
                                         required: { value: true },
                                       }}
                                       onChange={validation.handleChange}
                                       onBlur={validation.handleBlur}
-                                      value={validation.values.make_name || ""}
+                                      value={validation.values.event_type || ""}
                                       invalid={
-                                        validation.touched.make_name &&
-                                        validation.errors.make_name
+                                        validation.touched.event_type &&
+                                        validation.errors.event_type
                                           ? true
                                           : false
                                       }
                                     />
-                                    {validation.touched.make_name &&
-                                    validation.errors.make_name ? (
+                                    {validation.touched.event_type &&
+                                    validation.errors.event_type ? (
                                       <FormFeedback type="invalid">
-                                        {validation.errors.make_name}
+                                        {validation.errors.event_type}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+
+                                <Col lg={12}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Event Description
+                                    </Label>
+                                    <Input
+                                      name="event_description"
+                                      id="event_description"
+                                      className="form-control"
+                                      placeholder="Enter Event Description"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.event_description ||
+                                        ""
+                                      }
+                                      invalid={
+                                        validation.touched.event_description &&
+                                        validation.errors.event_description
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.event_description &&
+                                    validation.errors.event_description ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.event_description}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+
+                                <Col lg={12}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Event Date
+                                    </Label>
+                                    <Input
+                                      name="event_date"
+                                      id="event_date"
+                                      className="form-control"
+                                      placeholder="Enter Event Date"
+                                      type="date"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={validation.values.event_date || ""}
+                                      invalid={
+                                        validation.touched.event_date &&
+                                        validation.errors.event_date
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.event_date &&
+                                    validation.errors.event_date ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.event_date}
                                       </FormFeedback>
                                     ) : null}
                                   </div>
@@ -737,11 +1135,11 @@ const VehicleMake = () => {
                                 <button
                                   type="button"
                                   className="btn btn-light"
-                                   style={{
+                                  style={{
                                     backgroundColor: "#8b3af8",
                                     color: "white",
                                     boxShadow: "none",
-                                    borderRadius: '20px'
+                                    borderRadius: "20px",
                                   }}
                                   onClick={() => {
                                     setModal(false);
@@ -760,7 +1158,7 @@ const VehicleMake = () => {
                                     border: "1px solid #8b3af8",
                                     color: "black",
                                     boxShadow: "none",
-                                    borderRadius: '20px'
+                                    borderRadius: "20px",
                                   }}
                                   id="add-btn"
                                 >
@@ -774,110 +1172,7 @@ const VehicleMake = () => {
                       </Col>
                     </Row>
                   </Modal>
-                  {/* <ToastContainer closeButton={false} limit={1} /> */}
-                </CardBody>
-              </Card>
-            </Col>
-
-            <Col xxl={6}>
-              <Card
-                id="contact-view-detail"
-                style={{
-                  boxShadow: "none",
-                  backgroundColor: "white",
-                  borderRadius: "40px",
-                  overflow: "hidden",
-                  border: "1px solid #e0e0e0",
-                  height: "auto",
-                }}
-              >
-                <CardBody className="text-center">
-                  <div className="position-relative d-inline-block">
-                    {/* <img
-                      src={process.env.REACT_APP_API_URL + "/images/users/" + (info.image_src || "avatar-10.jpg")}
-                      alt=""
-                      className="avatar-lg rounded-circle img-thumbnail"
-                    /> */}
-                    <span className="contact-active position-absolute rounded-circle bg-success">
-                      <span className="visually-hidden"></span>
-                    </span>
-                  </div>
-                  {/* <h5 className="mt-4 mb-1">{info.name || "Tonya Noble"}</h5>
-                  <p className="text-muted">{info.company || "Nesta Technologies"}</p> */}
-                  {/* 
-                  <ul className="list-inline mb-0">
-                    <li className="list-inline-item avatar-xs">
-                      <Link
-                        to="#"
-                        className="avatar-title bg-soft-success text-success fs-15 rounded"
-                      >
-                        <i className="ri-phone-line"></i>
-                      </Link>
-                    </li>
-                    <li className="list-inline-item avatar-xs">
-                      <Link
-                        to="#"
-                        className="avatar-title bg-soft-danger text-danger fs-15 rounded"
-                      >
-                        <i className="ri-mail-line"></i>
-                      </Link>
-                    </li>
-                    <li className="list-inline-item avatar-xs">
-                      <Link
-                        to="#"
-                        className="avatar-title bg-soft-warning text-warning fs-15 rounded"
-                      >
-                        <i className="ri-question-answer-line"></i>
-                      </Link>
-                    </li>
-                  </ul> */}
-                </CardBody>
-                <CardBody>
-                  {/* <h6 className="text-muted text-uppercase fw-semibold mb-3">
-                    Personal Information
-                  </h6>
-                  <p className="text-muted mb-4">
-                    Hello, I'm {info.name || "Tonya Noble"}, The most effective objective is one
-                    that is tailored to the job you are applying for. It states
-                    what kind of career you are seeking, and what skills and
-                    experiences.
-                  </p> */}
-                  <div className="table-responsive table-card">
-                    {/* <Table className="table table-borderless mb-0">
-                      <tbody>
-                        <tr>
-                          <td className="fw-medium">Name</td>
-                          <td>{info.category_name}</td>
-                        </tr>
-                       
-                      </tbody>
-                    </Table> */}
-                  </div>
-                  <div>
-                    <div
-                      className="m-2 d-flex"
-                      style={{ justifyContent: "space-around" }}
-                    >
-                      <div>
-                        <h4>
-                          <i
-                            className="bx bx-circle mx-2 fw-bolder"
-                            style={{ color: "#00d084" }}
-                          ></i>
-                          Mercedes Benz
-                        </h4>
-                      </div>
-
-                      <div>
-                        <img
-                          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSnSBhFZrGwqBgZTmLYggIc-ACgAVsNMTD2n3tR-jWh1Ygdxzz5"
-                          alt="car-img"
-                          className="img-fluid"
-                          width="400"
-                        ></img>
-                      </div>
-                    </div>
-                  </div>
+                  {/* <ToastContainer closeButton={false} limit={} /> */}
                 </CardBody>
               </Card>
             </Col>
@@ -888,4 +1183,4 @@ const VehicleMake = () => {
   );
 };
 
-export default VehicleMake;
+export default Events;

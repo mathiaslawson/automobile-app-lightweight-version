@@ -12,7 +12,7 @@ import RangeFilter from "../../../Components/Filters/RangeFilter";
 import { Button } from "reactstrap";
 import { FaCircle } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 import "./style.css";
 import RatingList from "./RatingComponent";

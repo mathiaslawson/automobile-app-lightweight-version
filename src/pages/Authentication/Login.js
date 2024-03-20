@@ -25,7 +25,7 @@ import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 //redux
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 
 import { Link } from "react-router-dom";
 
