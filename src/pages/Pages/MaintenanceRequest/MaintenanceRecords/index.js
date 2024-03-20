@@ -9,7 +9,6 @@ import "./Maintenance.css";
 import img from "../../../../assets/images/green.png";
 import nodata from "../../../../assets/images/nodata.png";
 import VerticalDivider from "../../../../Components/Customer/common/Divider";
-import { CiWarning } from "react-icons/ci";
 
 import {
   Col,
@@ -722,20 +721,120 @@ const MaintenanceRecords = () => {
         <Container fluid>
           {/* <BreadCrumb title="Create User Roles" pageTitle="System Roles" /> */}
           <Row>
-            <Col xxl={12}>
-              <div
+            <Col lg={12}>
+              <Card
                 style={{
-                  borderRadius: "8px",
-                  color: "#ffa518",
-                  backgroundColor: "#f0ecc9",
-                  border: "1px solid #ffa518",
+                  boxShadow: "none",
+                  backgroundColor: "white",
+                  borderRadius: "40px",
+                  overflow: "hidden",
+                  border: "1px solid #e0e0e0",
                 }}
-                className="p-3 mx-5"
               >
-                <CiWarning className="mx-1" />
-                Click on the Requests below to view more details on your
-                maintenance requests.
-              </div>
+                <CardHeader
+                  style={{
+                    backgroundColor: "white",
+                    border: "1px solid transparent",
+                    borderRadius: "10px",
+                    boxShadow: "none",
+                    outline: "none",
+                  }}
+                >
+                  <div className="d-flex align-items-center flex-wrap gap-2">
+                    <div className="flex-grow-1">
+                      <button
+                        style={{
+                          boxShadow: "none",
+                          backgroundColor: "white",
+                          borderRadius: "20px",
+                          overflow: "hidden",
+                          border: "1px solid #e0e0e0",
+                        }}
+                        disabled={
+                          updateloadding || saveloadding === true ? true : false
+                        }
+                        className="btn "
+                        onClick={() => {
+                          setModal(true);
+                        }}
+                      >
+                        {/* {updateloadding || saveloadding === true ? (
+                          ""
+                        ) : (
+                          <i className="ri-add-fill me-1 align-bottom"></i>
+                        )} */}
+                        <i
+                          className="bx bx-plus mx-1"
+                          style={{
+                            position: "relative",
+                            top: "0.1rem",
+                            fontWeight: "bolder",
+                          }}
+                        ></i>
+                        Create Maintenance
+                        {/* {updateloadding || saveloadding === true ? (
+                          <SaveLoader />
+                        ) : (
+                          ""
+                        )} */}
+                      </button>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <div className="hstack text-nowrap gap-2">
+                        {isMultiDeleteButton && (
+                          <button
+                            className="btn"
+                            style={{
+                              backgroundColor: "#8b3af8",
+                              color: "gray",
+                              boxShadow: "none",
+                              fontWeight: "bolder",
+                            }}
+                            onClick={() => setDeleteModalMulti(true)}
+                          >
+                            <i className="ri-delete-bin-2-line"></i>
+                          </button>
+                        )}
+                        {/* <button className="btn btn-danger">
+                          <i className="ri-filter-2-line me-1 align-bottom"></i>{" "}
+                          Filters
+                        </button> */}
+                        <button
+                          className="btn "
+                          style={{
+                            boxShadow: "none",
+                            backgroundColor: "white",
+                            borderRadius: "20px",
+                            overflow: "hidden",
+                            border: "1px solid #e0e0e0",
+                          }}
+                          onClick={() => setIsExportCSV(true)}
+                        >
+                          Export
+                        </button>
+
+                        {/* <UncontrolledDropdown>
+                          <DropdownToggle
+                            href="#"
+                            className="btn btn-soft-info"
+                            tag="button"
+                          >
+                            <i className="ri-more-2-fill"></i>
+                          </DropdownToggle>
+                          <DropdownMenu className="dropdown-menu-end">
+                            <DropdownItem className="dropdown-item" href="#">All</DropdownItem>
+                            <DropdownItem className="dropdown-item" href="#">Last Week</DropdownItem>
+                            <DropdownItem className="dropdown-item" href="#">Last Month</DropdownItem>
+                            <DropdownItem className="dropdown-item" href="#">Last Year</DropdownItem>
+                          </DropdownMenu>
+                        </UncontrolledDropdown> */}
+                      </div>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </Col>
+            <Col xxl={9}>
               <Card
                 id="contactList"
                 style={{
@@ -827,14 +926,14 @@ const MaintenanceRecords = () => {
                                   <div
                                     style={{
                                       borderRadius: "30px",
-                                      width: "max-content",
-                                      color: "#ffa518",
-                                      backgroundColor: "#f0ecc9",
-                                      border: "1px solid #ffa518",
+                                      width: "20%",
+                                      color: "#00d084",
+                                      backgroundColor: "#9fe0cf",
+                                      border: "1px solid #00d084",
                                     }}
                                     className="p-1 text-center"
                                   >
-                                    Pending
+                                    80%
                                   </div>
                                 </div>
                               </div>
@@ -1137,6 +1236,97 @@ const MaintenanceRecords = () => {
                 </CardBody>
               </Card>
             </Col>
+
+            <Col xxl={3}>
+              <Card
+                id="contact-view-detail"
+                style={{
+                  boxShadow: "none",
+                  backgroundColor: "white",
+                  borderRadius: "40px",
+                  overflow: "hidden",
+                  border: "1px solid #e0e0e0",
+                }}
+              >
+                <CardBody className="text-center">
+                  <div className="position-relative d-inline-block">
+                    {/* <img
+                      src={process.env.REACT_APP_API_URL + "/images/users/" + (info.image_src || "avatar-10.jpg")}
+                      alt=""
+                      className="avatar-lg rounded-circle img-thumbnail"
+                    /> */}
+                    <span className="contact-active position-absolute rounded-circle bg-success">
+                      <span className="visually-hidden"></span>
+                    </span>
+                  </div>
+                </CardBody>
+                <CardBody>
+                  {/* <h6 className="text-muted text-uppercase fw-semibold mb-3">
+                    Personal Information
+                  </h6>
+                  <p className="text-muted mb-4">
+                    Hello, I'm {info.name || "Tonya Noble"}, The most effective objective is one
+                    that is tailored to the job you are applying for. It states
+                    what kind of career you are seeking, and what skills and
+                    experiences.
+                  </p> */}
+                  <div className="table-responsive table-card">
+                    <Table className="table table-borderless mb-0">
+                      <tbody>
+                        {/* <tr>
+                          <td className="fw-medium">Name</td>
+                          <td>{info.category_name}</td>
+                        </tr> */}
+                      </tbody>
+                    </Table>
+
+                    <div className="p-3">
+                      <div className="text-center">
+                        <h5 className="text-start">
+                          Maintenance Records
+                          <div>
+                            <hr
+                              style={{
+                                width: "10%",
+                                border: "2px solid #8b3af8",
+                              }}
+                              className="fw-bolder"
+                            />
+                          </div>
+                        </h5>
+                        <img
+                          src="https://static.vecteezy.com/system/resources/previews/017/087/972/original/ev-electric-car-service-center-inspection-inspector-auto-engineer-and-motor-technician-maintenance-and-repair-cost-isometric-isolated-illustration-vector.jpg"
+                          alt="fuel"
+                          width="160"
+                        ></img>
+                      </div>
+
+                      <p
+                        style={{
+                          wordSpacing: "0.2rem",
+                          lineHeight: "1.4rem",
+                          backgroundColor: "#f2f2f7",
+                          borderRadius: "10px",
+                          border: "2px solid #e0e0e0",
+                        }}
+                        className="p-3 fw-light text-muted"
+                      >
+                        <i className="bx bx-error-circle fw-bolder text-dark mx-2 mt-2 fs-5"></i>
+                        Maintenance records serve as a vital documentation tool,
+                        capturing a detailed history of all maintenance
+                        activities performed on equipment or assets. These
+                        records facilitate proactive scheduling of future
+                        maintenance, aid in troubleshooting, and ensure
+                        compliance with safety and regulatory standards.
+                        Accurate maintenance documentation enhances equipment
+                        reliability, reduces downtime, and supports informed
+                        decision-making for efficient resource allocation.
+                      </p>
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
           </Row>
         </Container>
       </div>
@@ -1193,14 +1383,14 @@ const MaintenanceRecords = () => {
               <div
                 style={{
                   borderRadius: "30px",
-                  width: "max-content",
-                  color: "#ffa518",
-                  backgroundColor: "#f0ecc9",
-                  border: "1px solid #ffa518",
+                  width: "20%",
+                  color: "#00d084",
+                  backgroundColor: "#9fe0cf",
+                  border: "1px solid #00d084",
                 }}
                 className="p-1 text-center"
               >
-                Pending
+                80%
               </div>
             </div>
 
@@ -1221,7 +1411,7 @@ const MaintenanceRecords = () => {
               </div>
 
               <div className="text-start">
-                <div className="text-center fw-bolder">Customer Profile</div>
+                <div className="text-center fw-bolder">Mechanic Profile</div>
                 <div className="text-start d-flex align-items-center justify-content-around gap-2">
                   <div>
                     <img
@@ -1240,16 +1430,17 @@ const MaintenanceRecords = () => {
                     <p className="text-start mt-3 text-muted fw-lighter">
                       Osu, Accra
                     </p>
-                    
+                    <p className="text-start mt-3 text-muted fw-lighter">
+                      Platform Rating : <b>97/100</b>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-         
-            <div className="d-flex justify-content-center gap-4 mt-5">
-             <button className="btn btn-light" style={{boxShadow: 'none', border: '1px solid #00d084', borderRadius: '10px', color: '#00d084', backgroundColor: '#9fe0cf'}}>Accept Request</button>
-             <button className="btn btn-light" style={{boxShadow: 'none', border: '1px solid #ed174a', borderRadius: '10px', backgroundColor: '#f7d5ca', color: '#ed174a'}}>Decline Request</button>
+            <div className="text-center mt-5 fw-bolder">Track Maintenance</div>
+            <div>
+              <Timeline />
             </div>
 
             <div className="text-end p-3">

@@ -253,6 +253,7 @@ import BrandCategory from '../pages/Pages/BrandCategory'
 import SingleBrand from '../pages/Pages/SingleBrandCategory'
 
 import Purchase from '../pages/Pages/Purchases'
+import MaintenanceRequests from '../pages/Pages/MaintenanceRequest/'
 
 
 // import FileManager from "../pages/FileManager";
@@ -498,6 +499,8 @@ const authProtectedRoutes = [
  
   { path: "/public-price", component: <SubDealPrice /> },
   { path: "/customer-rating", component: <CustomerRating /> },
+  { path: "/maintenance-requests", component: <MaintenanceRequests /> },
+  
   
 
 

@@ -4,11 +4,10 @@ import { isEmpty } from "lodash";
 import * as moment from "moment";
 // import './index.css'
 // import img from "./img.png";
-import "./Maintenance.css";
+
 // Import Images
 import img from "../../../../assets/images/green.png";
 import nodata from "../../../../assets/images/nodata.png";
-import VerticalDivider from "../../../../Components/Customer/common/Divider";
 
 import {
   Col,
@@ -22,8 +21,8 @@ import {
   DropdownMenu,
   DropdownItem,
   Label,
-  Modal,
   Input,
+  Modal,
   ModalHeader,
   ModalBody,
   Form,
@@ -60,15 +59,7 @@ import "react-toastify/dist/ReactToastify.css";
 // Export Modal
 import ExportCSVModal from "../../../../Components/Common/ExportCSVModal";
 
-// profile
-import profile2 from "../../../../common/Profiles/profile2.png";
-import profile1 from "../../../../common/Profiles/profile1.png";
-import profile3 from "../../../../common/Profiles/profile3.png";
-import profile4 from "../../../../common/Profiles/profile4.png";
-import profile5 from "../../../../common/Profiles/profile5.png";
-import Timeline from "./Timeline/Timeline";
-
-const MaintenanceRecords = () => {
+const MaintenanceServices = () => {
   const dispatch = useDispatch();
   const {
     categories,
@@ -183,20 +174,14 @@ const MaintenanceRecords = () => {
 
     initialValues: {
       // img: (contact && contact.img) || '',
-      vehicle_id: (contact && contact.vehicle_id) || "",
-      customer_id: (contact && contact.customer_id) || "",
-      service_id: (contact && contact.service_id) || "",
-      service_date: (contact && contact.service_date) || "",
-      notes: (contact && contact.notes) || "",
-      total_cost: (contact && contact.total_cost) || "",
+      service_name: (contact && contact.service_name) || "",
+      description: (contact && contact.description) || "",
+      service_cost: (contact && contact.service_cost) || "",
     },
     validationSchema: Yup.object({
-      vehicle_id: Yup.string().required("This field should not be empty"),
-      customer_id: Yup.string().required("This field should not be empty"),
-      service_id: Yup.string().required("This field should not be empty"),
-      service_date: Yup.string().required("This field should not be empty"),
-      notes: Yup.string().required("This field should not be empty"),
-      total_cost: Yup.string().required("This field should not be empty"),
+      service_name: Yup.string().required("This field should not be empt"),
+      service_cost: Yup.string().required("This field should not be empt"),
+      description: Yup.string().required("This field should not be empt"),
     }),
     onSubmit: (values) => {
       if (isEdit) {
@@ -330,53 +315,27 @@ const MaintenanceRecords = () => {
       //   id: "#",
       // },
 
-      // {
-      //   vehicle_name: "BMW M5 Competition",
-      //   customer_name: "John Doe",
-      //   notes: 'Notes to take care of service',
-      //   total_cost: "200.000",
-      //   service_name: "Car Door Repair",
-      //   service_date: "2023-11-30T02:33:41.023Z",
-      //   created_at: "2023-11-30T02:33:41.023Z",
-      // },
-
       {
-        Header: "Vehicle ",
+        Header: "Vehicle",
         accessor: "vehicle_name",
         filterable: false,
       },
       {
-        Header: "Customer ",
+        Header: "Cost",
+        accessor: "cost",
+        filterable: false,
+      },
+      {
+        Header: "Customer",
         accessor: "customer_name",
         filterable: false,
       },
       {
-        Header: "Notes ",
-        accessor: "notes",
-        filterable: false,
-      },
-      {
-        Header: "Total Cost(GHC)",
-        accessor: "total_cost",
-        filterable: false,
-      },
-      {
-        Header: "Service Name ",
-        accessor: "service_name",
+        Header: "Description",
+        accessor: "description",
         filterable: false,
       },
 
-      {
-        Header: "Service Date",
-        Cell: (contact) => (
-          <>
-            {handleValidDate(contact.row.original.service_date)},{" "}
-            <small className="text-muted">
-              {handleValidTime(contact.row.original.service_date)}
-            </small>
-          </>
-        ),
-      },
       {
         Header: "CreatedAt",
         Cell: (contact) => (
@@ -537,16 +496,6 @@ const MaintenanceRecords = () => {
       label: "Harry James",
     },
   ];
-  const service = [
-    {
-      value: "Fuel Change",
-      label: "Fuel Change",
-    },
-    {
-      value: "Spark Plug Change",
-      label: "Spark Plug Change",
-    },
-  ];
 
   let featureOptions = options?.map(function (item) {
     return {
@@ -585,114 +534,30 @@ const MaintenanceRecords = () => {
       label: item.label,
     };
   });
-  let serviceOptions = service?.map(function (item) {
-    return {
-      value: item.value,
-      label: item.label,
-    };
-  });
 
   const users = [
     {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Repair",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
+      vehicle_name: "M5 BMW Competition",
       created_at: "2023-11-30T02:33:41.023Z",
-      img: profile2,
+      customer_name: "John Doe",
+      description: "Tyre maintenance description",
+      cost: "200.00",
     },
     {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Maintnance",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
+      vehicle_name: "Nissan GTR",
       created_at: "2023-11-30T02:33:41.023Z",
-      img: profile1,
+      customer_name: "James Gardner",
+      description: "Door maintenance description",
+      cost: "200.00",
     },
     {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Repair",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
+      vehicle_name: "Mercedes Benz GL",
       created_at: "2023-11-30T02:33:41.023Z",
-      img: profile4,
-    },
-    {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Maintnance",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
-      created_at: "2023-11-30T02:33:41.023Z",
-      img: profile5,
-    },
-    {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Repair",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
-      created_at: "2023-11-30T02:33:41.023Z",
-      img: profile2,
-    },
-    {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Maintnance",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
-      created_at: "2023-11-30T02:33:41.023Z",
-      img: profile1,
-    },
-    {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Maintnance",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
-      created_at: "2023-11-30T02:33:41.023Z",
-      img: profile4,
-    },
-    {
-      vehicle_name: "BMW M5 Competition",
-      customer_name: "John Doe",
-      type: "Repair",
-      notes: "Notes to take care of service",
-      total_cost: "200.000",
-      service_name: "Car Door Repair",
-      service_date: "2023-11-30T02:33:41.023Z",
-      created_at: "2023-11-30T02:33:41.023Z",
-      img: profile5,
+      customer_name: "Kevin Prince",
+      description: "Engine maintenance description",
+      cost: "200.00",
     },
   ];
-
-  const [selectedUser, setSelectedUser] = useState(null);
-
-  const handleCardClick = (user) => {
-    setSelectedUser(user);
-    console.log("click");
-  };
-
-  const closeModal = () => {
-    setSelectedUser(null);
-  };
 
   return (
     <React.Fragment>
@@ -771,7 +636,7 @@ const MaintenanceRecords = () => {
                             fontWeight: "bolder",
                           }}
                         ></i>
-                        Request Maintenance
+                        Add Maintenance Service
                         {/* {updateloadding || saveloadding === true ? (
                           <SaveLoader />
                         ) : (
@@ -834,15 +699,15 @@ const MaintenanceRecords = () => {
                 </CardHeader>
               </Card>
             </Col>
-            <Col xxl={12}>
+            <Col xxl={9}>
               <Card
                 id="contactList"
                 style={{
                   boxShadow: "none",
-                  backgroundColor: "transparent",
+                  backgroundColor: "white",
                   borderRadius: "40px",
                   overflow: "hidden",
-                  border: "1px solid transparent",
+                  border: "1px solid #e0e0e0",
                 }}
               >
                 <CardBody
@@ -857,90 +722,20 @@ const MaintenanceRecords = () => {
                 >
                   <div>
                     {!loading && users.length > 0 ? (
-                      // <TableContainer
-                      //   columns={columns}
-                      //   data={users || []}
-                      //   isGlobalFilter={true}
-                      //   isAddUserList={false}
-                      //   customPageSize={8}
-                      //   className="custom-header-css"
-                      //   divClass="table-responsive table-card mb-3"
-                      //   tableClass="align-middle table-nowrap"
-                      //   theadClass="table-light"
-                      //   handleContactClick={handleContactClicks}
-                      //   isContactsFilter={true}
-                      //   SearchPlaceholder="Search maintenance records..."
-                      // />
-                      <>
-                        <div
-                          className="d-flex p-2 justify-content-around align-items-center"
-                          style={{ display: "block", flexWrap: "wrap" }}
-                        >
-                          {users?.map((item, key) => {
-                            return (
-                              <div
-                                className="p-2 maintenance-card m-2"
-                                style={{
-                                  display: "inline-block",
-                                  width: "22%",
-                                  borderRadius: "10px",
-                                }}
-                                onClick={() => handleCardClick(item)}
-                                key={key}
-                              >
-                                <div>
-                                  <img
-                                    src={item?.img}
-                                    alt="car"
-                                    className="img-fluid"
-                                    style={{ objectFit: "contain" }}
-                                  ></img>
-                                </div>
-
-                                <div className="text-center mb-2">
-                                  <p className="text-muted fw-bolder">
-                                    BMW M5 Competition 4.5 Turbo Charge
-                                  </p>
-                                </div>
-
-                                <div className="text-center mt-2">
-                                  <p className="text-muted">Maintenance Type</p>
-                                </div>
-
-                                <div
-                                  className="d-flex justify-content-center gap-2 mb-5"
-                                  style={{ flexWrap: "wrap" }}
-                                >
-                                  <div
-                                    style={{
-                                      borderRadius: "30px",
-                                      width: "50%",
-                                      color: "#8b3af8",
-                                      backgroundColor: "#d2b7f3",
-                                      border: "1px solid #8b3af8",
-                                    }}
-                                    className="p-1 text-center"
-                                  >
-                                    {item.type}
-                                  </div>
-                                  <div
-                                    style={{
-                                      borderRadius: "30px",
-                                      width: "20%",
-                                      color: "#00d084",
-                                      backgroundColor: "#9fe0cf",
-                                      border: "1px solid #00d084",
-                                    }}
-                                    className="p-1 text-center"
-                                  >
-                                    80%
-                                  </div>
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </>
+                      <TableContainer
+                        columns={columns}
+                        data={users || []}
+                        isGlobalFilter={true}
+                        isAddUserList={false}
+                        customPageSize={8}
+                        className="custom-header-css"
+                        divClass="table-responsive table-card mb-3"
+                        tableClass="align-middle table-nowrap"
+                        theadClass="table-light"
+                        handleContactClick={handleContactClicks}
+                        isContactsFilter={true}
+                        SearchPlaceholder="Search assigned features..."
+                      />
                     ) : loading === true ? (
                       <Loader error={error} />
                     ) : (
@@ -980,7 +775,8 @@ const MaintenanceRecords = () => {
                         md={4}
                         className="left-column"
                         xl={4}
-                        style={{ overflow: "hidden", display: "none" }}
+                        style={{ overflow: "hidden", display: 'none' }}
+                      
                       >
                         {/* Your content, image, or any other elements */}
                         <div className="text-center mt-5">
@@ -1013,181 +809,498 @@ const MaintenanceRecords = () => {
                             <ModalBody>
                               <Input type="hidden" id="id-field" />
                               <Row className="g-3">
-                                <Col className="mt-4" lg={12}>
-                                  <p className=" mb-2">
-                                    {" "}
-                                    <Link
-                                      to="#"
-                                      className="float-end text-decoration-underline"
-                                    ></Link>
-                                    Select Vehicle
-                                  </p>
-
-                                  <Select
-                                    name="vehicle_id"
-                                    value={vehicleOptions.find(function (e) {
-                                      return (
-                                        (!isEdit ? e.label : e.value) ===
-                                        validation.values.vehicle_id
-                                      );
-                                    })}
-                                    onChange={(e) =>
-                                      validation.setFieldValue(
-                                        "vehicle_id",
-                                        e.value
-                                      )
-                                    }
-                                    className="mb-0"
-                                    options={vehicleOptions}
-                                    id="taginput-choices"
-                                  ></Select>
-                                  <p style={{ color: "red" }} className="mt-2">
-                                    {validation.errors.vehicle_id}
-                                  </p>
-                                </Col>
-
-                                <Col className="mt-4" lg={12}>
-                                  <p className=" mb-2">
-                                    {" "}
-                                    <Link
-                                      to="#"
-                                      className="float-end text-decoration-underline"
-                                    ></Link>
-                                    Select Service
-                                  </p>
-
-                                  <Select
-                                    name="service_id"
-                                    value={serviceOptions.find(function (e) {
-                                      return (
-                                        (!isEdit ? e.label : e.value) ===
-                                        validation.values.service_id
-                                      );
-                                    })}
-                                    onChange={(e) =>
-                                      validation.setFieldValue(
-                                        "service_id",
-                                        e.value
-                                      )
-                                    }
-                                    className="mb-0"
-                                    options={serviceOptions}
-                                    id="taginput-choices"
-                                  ></Select>
-                                  <p style={{ color: "red" }} className="mt-2">
-                                    {validation.errors.service_id}
-                                  </p>
-                                </Col>
-
                                 <Col lg={12}>
                                   <div>
                                     <Label
                                       htmlFor="role_name"
                                       className="form-label"
                                     >
-                                      Service Date
+                                      Service Name
                                     </Label>
                                     <Input
-                                      name="service_date"
-                                      id="service_date"
+                                      name="service_name"
+                                      id="service_name"
                                       className="form-control"
                                       placeholder="Enter Service Name"
-                                      type="date"
+                                      type="text"
                                       validate={{
                                         required: { value: true },
                                       }}
                                       onChange={validation.handleChange}
                                       onBlur={validation.handleBlur}
                                       value={
-                                        validation.values.service_date || ""
+                                        validation.values.service_name || ""
                                       }
                                       invalid={
-                                        validation.touched.service_date &&
-                                        validation.errors.service_date
+                                        validation.touched.service_name &&
+                                        validation.errors.service_name
                                           ? true
                                           : false
                                       }
                                     />
-                                    {validation.touched.service_date &&
-                                    validation.errors.service_date ? (
+                                    {validation.touched.service_name &&
+                                    validation.errors.service_name ? (
                                       <FormFeedback type="invalid">
-                                        {validation.errors.service_date}
+                                        {validation.errors.service_name}
                                       </FormFeedback>
                                     ) : null}
                                   </div>
                                 </Col>
-
                                 <Col lg={12}>
                                   <div>
                                     <Label
                                       htmlFor="role_name"
                                       className="form-label"
                                     >
-                                      Notes
+                                      Description
                                     </Label>
                                     <Input
-                                      name="notes"
-                                      id="notes"
+                                      name="description"
+                                      id="description"
                                       className="form-control"
-                                      placeholder="Enter Notes"
+                                      placeholder="Enter Description"
                                       type="text"
                                       validate={{
                                         required: { value: true },
                                       }}
                                       onChange={validation.handleChange}
                                       onBlur={validation.handleBlur}
-                                      value={validation.values.notes || ""}
+                                      value={
+                                        validation.values.description || ""
+                                      }
                                       invalid={
-                                        validation.touched.notes &&
-                                        validation.errors.notes
+                                        validation.touched.description &&
+                                        validation.errors.description
                                           ? true
                                           : false
                                       }
                                     />
-                                    {validation.touched.notes &&
-                                    validation.errors.notes ? (
+                                    {validation.touched.description &&
+                                    validation.errors.description ? (
                                       <FormFeedback type="invalid">
-                                        {validation.errors.notes}
+                                        {validation.errors.description}
                                       </FormFeedback>
                                     ) : null}
                                   </div>
                                 </Col>
-
                                 <Col lg={12}>
                                   <div>
                                     <Label
                                       htmlFor="role_name"
                                       className="form-label"
                                     >
-                                      Total Cost Numeric
+                                      Service Cost
                                     </Label>
                                     <Input
-                                      name="total_cost"
-                                      id="total_cost"
+                                      name="service_cost"
+                                      id="service_cost"
                                       className="form-control"
-                                      placeholder="Enter Total Cost"
+                                      placeholder="Enter Service Cost"
                                       type="text"
                                       validate={{
                                         required: { value: true },
                                       }}
                                       onChange={validation.handleChange}
                                       onBlur={validation.handleBlur}
-                                      value={validation.values.total_cost || ""}
+                                      value={
+                                        validation.values.service_cost || ""
+                                      }
                                       invalid={
-                                        validation.touched.total_cost &&
-                                        validation.errors.total_cost
+                                        validation.touched.service_cost &&
+                                        validation.errors.service_cost
                                           ? true
                                           : false
                                       }
                                     />
-                                    {validation.touched.total_cost &&
-                                    validation.errors.total_cost ? (
+                                    {validation.touched.service_cost &&
+                                    validation.errors.service_cost ? (
                                       <FormFeedback type="invalid">
-                                        {validation.errors.total_cost}
+                                        {validation.errors.service_cost}
                                       </FormFeedback>
                                     ) : null}
                                   </div>
                                 </Col>
+
+                                {/* <Row className="mt-4">
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Color
+                                    </Label>
+                                    <Input
+                                      name="color"
+                                      id="color"
+                                      className="form-control"
+                                      placeholder="Enter Year"
+                                      type="color"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.color || ""
+                                      }
+                                      invalid={
+                                        validation.touched.color &&
+                                        validation.errors.color
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.color &&
+                                    validation.errors.color ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.color}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Color
+                                    </Label>
+                                    <Input
+                                      name="vin_number"
+                                      id="vin_number"
+                                      className="form-control"
+                                      placeholder="Enter Vin Number"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.vin_number || ""
+                                      }
+                                      invalid={
+                                        validation.touched.vin_number &&
+                                        validation.errors.vin_number
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.vin_number &&
+                                    validation.errors.vin_number ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.vin_number}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                </Row>
+                                <Row className="mt-4">
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Mileage
+                                    </Label>
+                                    <Input
+                                      name="mileage"
+                                      id="mileage"
+                                      className="form-control"
+                                      placeholder="Enter Mileage"
+                                      type="mileage"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.mileage || ""
+                                      }
+                                      invalid={
+                                        validation.touched.mileage &&
+                                        validation.errors.mileage
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.mileage &&
+                                    validation.errors.mileage ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.mileage}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Price
+                                    </Label>
+                                    <Input
+                                      name="price"
+                                      id="price"
+                                      className="form-control"
+                                      placeholder="Enter Price"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.price || ""
+                                      }
+                                      invalid={
+                                        validation.touched.price &&
+                                        validation.errors.price
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.price &&
+                                    validation.errors.price ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.price}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                </Row>
+                                <Row className="mt-4">
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Status
+                                    </Label>
+                                    <Input
+                                      name="mileage"
+                                      id="mileage"
+                                      className="form-control"
+                                      placeholder="Enter Mileage"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.mileage || ""
+                                      }
+                                      invalid={
+                                        validation.touched.mileage &&
+                                        validation.errors.mileage
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.mileage &&
+                                    validation.errors.mileage ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.mileage}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Transmission Type
+                                    </Label>
+                                    <Input
+                                      name="price"
+                                      id="price"
+                                      className="form-control"
+                                      placeholder="Enter Price"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.price || ""
+                                      }
+                                      invalid={
+                                        validation.touched.price &&
+                                        validation.errors.price
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.price &&
+                                    validation.errors.price ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.price}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                </Row>
+                                <Row className="mt-4">
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Engine Size
+                                    </Label>
+                                    <Input
+                                      name="engine_size"
+                                      id="engine_size"
+                                      className="form-control"
+                                      placeholder="Enter Engine Size"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.engine_size || ""
+                                      }
+                                      invalid={
+                                        validation.touched.engine_size &&
+                                        validation.errors.engine_size
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.engine_size &&
+                                    validation.errors.engine_size ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.engine_size}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Resgistration Plate
+                                    </Label>
+                                    <Input
+                                      name="registration_plate"
+                                      id="registration_plate"
+                                      className="form-control"
+                                      placeholder="Enter Registration Plate"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.registration_plate || ""
+                                      }
+                                      invalid={
+                                        validation.touched.registration_plate &&
+                                        validation.errors.registration_plate
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.registration_plate &&
+                                    validation.errors.registration_plate ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.registration_plate}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                </Row>
+                                <Row className="mt-4">
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Purchase Date
+                                    </Label>
+                                    <Input
+                                      name="purchase_date"
+                                      id="purchase_date"
+                                      className="form-control"
+                                      placeholder="Enter Engine Size"
+                                      type="time"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.purchase_date || ""
+                                      }
+                                      invalid={
+                                        validation.touched.purchase_date &&
+                                        validation.errors.purchase_date
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.purchase_date &&
+                                    validation.errors.purchase_date ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.purchase_date}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                <Col lg={6}>
+                                  <div>
+                                    <Label
+                                      htmlFor="role_name"
+                                      className="form-label"
+                                    >
+                                      Purchase Price
+                                    </Label>
+                                    <Input
+                                      name="purchase_price"
+                                      id="purchase_price"
+                                      className="form-control"
+                                      placeholder="Enter Purchase Price"
+                                      type="text"
+                                      validate={{
+                                        required: { value: true },
+                                      }}
+                                      onChange={validation.handleChange}
+                                      onBlur={validation.handleBlur}
+                                      value={
+                                        validation.values.purchase_price || ""
+                                      }
+                                      invalid={
+                                        validation.touched.purchase_price &&
+                                        validation.errors.purchase_price
+                                          ? true
+                                          : false
+                                      }
+                                    />
+                                    {validation.touched.purchase_price &&
+                                    validation.errors.purchase_price ? (
+                                      <FormFeedback type="invalid">
+                                        {validation.errors.purchase_price}
+                                      </FormFeedback>
+                                    ) : null}
+                                  </div>
+                                </Col>
+                                </Row> */}
                               </Row>
                             </ModalBody>
                             <ModalFooter>
@@ -1195,11 +1308,11 @@ const MaintenanceRecords = () => {
                                 <button
                                   type="button"
                                   className="btn btn-light"
-                                  style={{
+                                   style={{
                                     backgroundColor: "#8b3af8",
                                     color: "white",
                                     boxShadow: "none",
-                                    borderRadius: "20px",
+                                    borderRadius: '20px'
                                   }}
                                   onClick={() => {
                                     setModal(false);
@@ -1218,7 +1331,7 @@ const MaintenanceRecords = () => {
                                     border: "1px solid #8b3af8",
                                     color: "black",
                                     boxShadow: "none",
-                                    borderRadius: "20px",
+                                    borderRadius: '20px'
                                   }}
                                   id="add-btn"
                                 >
@@ -1237,7 +1350,7 @@ const MaintenanceRecords = () => {
               </Card>
             </Col>
 
-            {/* <Col xxl={3}>
+            <Col xxl={3}>
               <Card
                 id="contact-view-detail"
                 style={{
@@ -1250,25 +1363,41 @@ const MaintenanceRecords = () => {
               >
                 <CardBody className="text-center">
                   <div className="position-relative d-inline-block">
-                
+                    {/* <img
+                      src={process.env.REACT_APP_API_URL + "/images/users/" + (info.image_src || "avatar-10.jpg")}
+                      alt=""
+                      className="avatar-lg rounded-circle img-thumbnail"
+                    /> */}
                     <span className="contact-active position-absolute rounded-circle bg-success">
                       <span className="visually-hidden"></span>
                     </span>
                   </div>
+                
                 </CardBody>
                 <CardBody>
-                 
+                  {/* <h6 className="text-muted text-uppercase fw-semibold mb-3">
+                    Personal Information
+                  </h6>
+                  <p className="text-muted mb-4">
+                    Hello, I'm {info.name || "Tonya Noble"}, The most effective objective is one
+                    that is tailored to the job you are applying for. It states
+                    what kind of career you are seeking, and what skills and
+                    experiences.
+                  </p> */}
                   <div className="table-responsive table-card">
                     <Table className="table table-borderless mb-0">
                       <tbody>
-                      
+                        {/* <tr>
+                          <td className="fw-medium">Name</td>
+                          <td>{info.category_name}</td>
+                        </tr> */}
                       </tbody>
                     </Table>
 
                     <div className="p-3">
                       <div className="text-center">
                         <h5 className="text-start">
-                          Maintenance Records
+                          Maintenance Services
                           <div>
                             <hr
                               style={{
@@ -1297,151 +1426,18 @@ const MaintenanceRecords = () => {
                         className="p-3 fw-light text-muted"
                       >
                         <i className="bx bx-error-circle fw-bolder text-dark mx-2 mt-2 fs-5"></i>
-                        Maintenance records serve as a vital documentation tool,
-                        capturing a detailed history of all maintenance
-                        activities performed on equipment or assets. These
-                        records facilitate proactive scheduling of future
-                        maintenance, aid in troubleshooting, and ensure
-                        compliance with safety and regulatory standards.
-                        Accurate maintenance documentation enhances equipment
-                        reliability, reduces downtime, and supports informed
-                        decision-making for efficient resource allocation.
+                        Maintenance services are essential for ensuring the optimal functionality and longevity of equipment, systems, or facilities. Regular upkeep and inspections help identify and address potential issues before they escalate, minimizing downtime and preventing costly repairs. Whether for vehicles, machinery, or infrastructure, proactive maintenance enhances performance and safety, ensuring smooth operations.
                       </p>
                     </div>
                   </div>
                 </CardBody>
               </Card>
-            </Col> */}
+            </Col>
           </Row>
         </Container>
       </div>
-
-      <Modal
-        isOpen={!!selectedUser}
-        onRequestClose={closeModal}
-        contentLabel="Maintenance Profile"
-        size="xl"
-        toggle={closeModal}
-      >
-        {selectedUser && (
-          <div>
-            <div className="text-center">
-              <img src={selectedUser.img} alt="car"></img>
-            </div>
-
-            <div className="text-center d-flex justify-content-center">
-              <div>
-                <h5> BMW M5 Competition 4.5 Turbo Charge</h5>
-              </div>
-              <div>
-                <VerticalDivider />
-              </div>
-              <div className="">
-                <p
-                  style={{
-                    border: "1px solid #e0e0e0",
-                    padding: "1px 5px 1px 5px",
-                    borderRadius: "10px",
-                  }}
-                >
-                  GHC 250,000.00
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="d-flex justify-content-center gap-2 mb-5 mt-4"
-              style={{ flexWrap: "wrap" }}
-            >
-              <div
-                style={{
-                  borderRadius: "30px",
-                  width: "50%",
-                  color: "#8b3af8",
-                  backgroundColor: "#d2b7f3",
-                  border: "1px solid #8b3af8",
-                }}
-                className="p-1 text-center"
-              >
-                {selectedUser.type}
-              </div>
-              <div
-                style={{
-                  borderRadius: "30px",
-                  width: "20%",
-                  color: "#00d084",
-                  backgroundColor: "#9fe0cf",
-                  border: "1px solid #00d084",
-                }}
-                className="p-1 text-center"
-              >
-                80%
-              </div>
-            </div>
-
-            <div className="text-center p-3 d-flex justify-content-around align-items-center">
-              <div className="text-center">
-                <div className="text-center fw-bolder">Repair Description</div>
-                <p
-                  style={{
-                    border: "1px solid #e0e0e0",
-                    width: "100%",
-                    borderRadius: "15px",
-                    backgroundColor: "#eceaeb",
-                  }}
-                  className="p-3 mt-3"
-                >
-                  Car need a new paint job with a set of fresh new tiers
-                </p>
-              </div>
-
-              <div className="text-start">
-                <div className="text-center fw-bolder">Mechanic Profile</div>
-                <div className="text-start d-flex align-items-center justify-content-around gap-2">
-                  <div>
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpCQSRJcWrFBiKbXHkiL-FgBk-vJpAxsO7KA&s"
-                      alt="profile"
-                      width={"80px"}
-                      height={"80px"}
-                      className="mt-3"
-                      style={{ borderRadius: "50%", objectFit: "cover" }}
-                    ></img>
-                  </div>
-                  <div style={{ lineHeight: "4px" }}>
-                    <p className="text-start mt-3 fs-5 fw-lighter">
-                      Mathias Lawson
-                    </p>
-                    <p className="text-start mt-3 text-muted fw-lighter">
-                      Osu, Accra
-                    </p>
-                    <p className="text-start mt-3 text-muted fw-lighter">
-                      Platform Rating : <b>97/100</b>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center mt-5 fw-bolder">Track Maintenance</div>
-            <div>
-              <Timeline />
-            </div>
-
-            <div className="text-end p-3">
-              <button
-                onClick={closeModal}
-                style={{ backgroundColor: "white", border: "none" }}
-                className="p-3"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        )}
-      </Modal>
     </React.Fragment>
   );
 };
 
-export default MaintenanceRecords;
+export default MaintenanceServices;

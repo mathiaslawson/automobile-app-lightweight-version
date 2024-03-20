@@ -5,7 +5,6 @@ import { isEmpty } from "lodash";
 import * as moment from "moment";
 import classnames from "classnames";
 // import "./index.css";
-import Records from './Record'
 
 // Import Images
 
@@ -520,10 +519,6 @@ const Maintenance = () => {
     }
   };
 
-  const {user} = useSelector((state) => state.Login);
-
-  console.log(user.role, 'actor')
-
   return (
     <React.Fragment>
       <div className="page-content">
@@ -563,7 +558,7 @@ const Maintenance = () => {
                         })}
                         onClick={() => toggleTab("maintenanceservices")}
                       >
-                        Maintenance Requests
+                        Maintenance Services
                       </NavLink>
                     </NavItem>
                     <NavItem className="">
@@ -573,7 +568,7 @@ const Maintenance = () => {
                         })}
                         onClick={() => toggleTab("maintenancerecords")}
                       >
-                       {user.role === 'mech' ? 'Record Maintenance' : 'Maintenance Records'}
+                        Maintenance Records
                       </NavLink>
                     </NavItem>
                     {/* <NavItem className="custom-tab">
@@ -598,7 +593,7 @@ const Maintenance = () => {
                     </TabPane>
                     <TabPane tabId="maintenancerecords">
                       <div className="tab-content">
-                      {user.role === 'mech' ? <Records /> : <MaintenanceRecords />}
+                        <MaintenanceRecords />
                       </div>
                     </TabPane>
                   </TabContent>
